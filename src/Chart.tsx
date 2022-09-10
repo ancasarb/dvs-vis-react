@@ -18,12 +18,14 @@ export type ChartProps = {
   width: number;
   height: number;
   margin?: { top: number; right: number; bottom: number; left: number };
+  firstCity: string;
+  secondCity: string;
 };
 
 // accessors
 const date = (d: CityTemperature) => new Date(d.date).valueOf();
-const ny = (d: CityTemperature) => Number(d["New York"]);
-const sf = (d: CityTemperature) => Number(d["San Francisco"]);
+const temperature = (d: CityTemperature, city: string) =>
+  Number(d[city as keyof CityTemperature]);
 
 // scales
 const timeScale = scaleTime<number>({
@@ -32,20 +34,35 @@ const timeScale = scaleTime<number>({
     Math.max(...cityTemperature.map(date)),
   ],
 });
-const temperatureScale = scaleLinear<number>({
-  domain: [
-    Math.min(...cityTemperature.map((d) => Math.min(ny(d), sf(d)))),
-    Math.max(...cityTemperature.map((d) => Math.max(ny(d), sf(d)))),
-  ],
-  nice: true,
-});
 
-function Chart({ width, height, margin = defaultMargin }: ChartProps) {
+function Chart({
+  width,
+  height,
+  margin = defaultMargin,
+  firstCity,
+  secondCity,
+}: ChartProps) {
   if (width < 10) return null;
 
   // bounds
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
+
+  const temperatureScale = scaleLinear<number>({
+    domain: [
+      Math.min(
+        ...cityTemperature.map((d) =>
+          Math.min(temperature(d, firstCity), temperature(d, secondCity))
+        )
+      ),
+      Math.max(
+        ...cityTemperature.map((d) =>
+          Math.max(temperature(d, firstCity), temperature(d, secondCity))
+        )
+      ),
+    ],
+    nice: true,
+  });
 
   timeScale.range([0, xMax]);
   temperatureScale.range([yMax, 0]);
@@ -88,8 +105,8 @@ function Chart({ width, height, margin = defaultMargin }: ChartProps) {
             id={`${Math.random()}`}
             data={cityTemperature}
             x={(d) => timeScale(date(d)) ?? 0}
-            y0={(d) => temperatureScale(ny(d)) ?? 0}
-            y1={(d) => temperatureScale(sf(d)) ?? 0}
+            y0={(d) => temperatureScale(temperature(d, firstCity)) ?? 0}
+            y1={(d) => temperatureScale(temperature(d, secondCity)) ?? 0}
             clipAboveTo={0}
             clipBelowTo={yMax}
             curve={curveBasis}
@@ -106,7 +123,7 @@ function Chart({ width, height, margin = defaultMargin }: ChartProps) {
             data={cityTemperature}
             curve={curveBasis}
             x={(d) => timeScale(date(d)) ?? 0}
-            y={(d) => temperatureScale(sf(d)) ?? 0}
+            y={(d) => temperatureScale(temperature(d, secondCity)) ?? 0}
             stroke="#222"
             strokeWidth={1.5}
             strokeOpacity={0.8}
@@ -116,7 +133,7 @@ function Chart({ width, height, margin = defaultMargin }: ChartProps) {
             data={cityTemperature}
             curve={curveBasis}
             x={(d) => timeScale(date(d)) ?? 0}
-            y={(d) => temperatureScale(ny(d)) ?? 0}
+            y={(d) => temperatureScale(temperature(d, firstCity)) ?? 0}
             stroke="#222"
             strokeWidth={1.5}
           />
