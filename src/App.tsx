@@ -25,14 +25,12 @@ function App(props: AppProps) {
       const shuffled = shuffle(cities);
       setCities({ firstCity: shuffled[0], secondCity: shuffled[1] });
     }, 10000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
-  return (
-    <div>
-      <Chart {...{ ...props, ...cities }} />
-    </div>
-  );
+  return <Chart {...{ ...props, ...cities }} />;
 }
 
 export default App;
