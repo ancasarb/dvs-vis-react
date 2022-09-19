@@ -1,10 +1,10 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Chart from "./Chart";
+import Cities from "./Cities";
 
 import { shuffle } from "lodash";
-
-const allCities = ["New York", "San Francisco", "Austin"];
+import Penguins from "./Penguins";
 
 export type AppProps = {
   width: number;
@@ -13,13 +13,14 @@ export type AppProps = {
 };
 
 function App(props: AppProps) {
+  const allCities = ["New York", "San Francisco", "Austin"];
+
   const [cities, setCities] = React.useState(() => {
     return {
       firstCity: allCities[0],
       secondCity: allCities[1],
     };
   });
-
   React.useEffect(() => {
     const interval = setInterval(() => {
       const shuffled = shuffle(cities);
@@ -29,8 +30,17 @@ function App(props: AppProps) {
       clearInterval(interval);
     };
   }, []);
-
-  return <Chart {...{ ...props, ...cities }} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/cities"
+          element={<Cities {...{ ...props, ...cities }} />}
+        />
+        <Route path="/penguins" element={<Penguins />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

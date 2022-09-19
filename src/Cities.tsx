@@ -1,4 +1,3 @@
-import "./App.css";
 import { Group } from "@visx/group";
 import { curveBasis } from "@visx/curve";
 import { LinePath } from "@visx/shape";
@@ -14,7 +13,7 @@ export const background = "#f3f3f3";
 
 export const defaultMargin = { top: 40, right: 30, bottom: 50, left: 40 };
 
-export type ChartProps = {
+export type CitiesProps = {
   width: number;
   height: number;
   margin?: { top: number; right: number; bottom: number; left: number };
@@ -35,13 +34,13 @@ const timeScale = scaleTime<number>({
   ],
 });
 
-function Chart({
+function Cities({
   width,
   height,
   margin = defaultMargin,
   firstCity,
   secondCity,
-}: ChartProps) {
+}: CitiesProps) {
   if (width < 10) return null;
 
   // bounds
@@ -143,4 +142,4 @@ function Chart({
   );
 }
 
-export default Chart;
+export default Cities;
