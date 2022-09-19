@@ -11,7 +11,7 @@ import cityTemperature, {
 
 export const background = "#f3f3f3";
 
-export const defaultMargin = { top: 40, right: 30, bottom: 50, left: 40 };
+const defaultMargin = { top: 40, right: 30, bottom: 50, left: 40 };
 
 export type CitiesProps = {
   width: number;

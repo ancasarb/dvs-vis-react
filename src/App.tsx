@@ -37,7 +37,7 @@ function App(props: AppProps) {
           path="/cities"
           element={<Cities {...{ ...props, ...cities }} />}
         />
-        <Route path="/penguins" element={<Penguins />} />
+        <Route path="/penguins" element={<Penguins {...props} />} />
       </Routes>
     </BrowserRouter>
   );

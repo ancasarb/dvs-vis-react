@@ -1,0 +1,107 @@
+@import url("https://rsms.me/inter/inter.css");
+
+/* CSS Reset: https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+:global(*),
+:global(*::before),
+:global(*::after) {
+  box-sizing: border-box;
+}
+
+:global(*) {
+  margin: 0;
+}
+
+:global(html),
+:global(body) {
+  height: 100%;
+}
+
+:global(body) {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+:global(img),
+:global(picture),
+:global(video),
+:global(canvas),
+:global(svg) {
+  display: block;
+  max-width: 100%;
+}
+
+:global(input),
+:global(button),
+:global(textarea),
+:global(select) {
+  font: inherit;
+}
+
+:global(p),
+:global(h1),
+:global(h2),
+:global(h3),
+:global(h4),
+:global(h5),
+:global(h6) {
+  overflow-wrap: break-word;
+}
+
+:global(#root),
+:global(#__next) {
+  isolation: isolate;
+}
+
+/* End of CSS reset */
+
+#root {
+  font-family: "Inter", sans-serif;
+}
+
+.penguins-axis-label {
+  font-size: large;
+}
+
+.penguins-data-point {
+  opacity: 0.4;
+  stroke: white;
+}
+
+.penguins-annotation-adelie {
+  color: #ff8c00;
+}
+
+.penguins-annotation-chinstrap {
+  color: #a034f0;
+}
+
+.penguins-annotation-gentoo {
+  color: #036f6f;
+}
+
+.penguins-annotation-adelie,
+.penguins-annotation-chinstrap,
+.penguins-annotation-gentoo {
+  font-size: 11px;
+}
+
+.penguins-annotation-title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.penguins-annotation-line-adelie,
+.penguins-annotation-line-chinstrap,
+.penguins-annotation-line-gentoo {
+  stroke-width: 3px;
+}
+
+.penguins-annotation-circle {
+  stroke-width: 2px;
+}
+
+.penguins-annotation-label {
+  font-weight: bold;
+  color: black;
+}
