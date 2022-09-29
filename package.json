@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@tidyjs/tidy": "^2.5.1",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@visx/visx": "^2.13.0",

@@ -1,5 +1,5 @@
 export interface Penguin {
-  species: string;
+  species: "Adelie" | "Chinstrap" | "Gentoo";
   island: string;
   billLength: number;
   billDepth: number;

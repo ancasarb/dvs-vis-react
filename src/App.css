@@ -105,3 +105,11 @@
   font-weight: bold;
   color: black;
 }
+
+.penguins-histogram-line {
+  opacity: 0.7;
+}
+
+.penguins-histogram-label {
+  font-weight: bold;
+}

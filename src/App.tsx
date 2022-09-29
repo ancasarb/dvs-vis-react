@@ -5,6 +5,7 @@ import Cities from "./Cities";
 
 import { shuffle } from "lodash";
 import Penguins from "./Penguins";
+import PenguinsHistogram from "./PenguinsHistogram";
 
 export type AppProps = {
   width: number;
@@ -34,10 +35,14 @@ function App(props: AppProps) {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/cities"
+          path="cities"
           element={<Cities {...{ ...props, ...cities }} />}
         />
-        <Route path="/penguins" element={<Penguins {...props} />} />
+        <Route path="penguins" element={<Penguins {...props} />} />
+        <Route
+          path="penguinsHistogram"
+          element={<PenguinsHistogram {...props} />}
+        />
       </Routes>
     </BrowserRouter>
   );
