@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@tidyjs/tidy": "^2.5.1",
+    "@types/d3": "^7.4.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@visx/visx": "^2.13.0",

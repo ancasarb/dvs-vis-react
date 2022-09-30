@@ -1,6 +1,5 @@
 import { penguins, Penguin } from "./data/penguins";
-import { groupBy, summarize, tidy } from "@tidyjs/tidy";
-import { extent } from "d3";
+import { extent, ScaleBand, ScaleOrdinal } from "d3";
 
 import { scaleLinear, scaleBand, scaleOrdinal } from "@visx/scale";
 import { Group } from "@visx/group";
@@ -8,38 +7,22 @@ import { Text } from "@visx/text";
 import { Line } from "@visx/shape";
 import { GridColumns } from "@visx/grid";
 import { AxisBottom } from "@visx/axis";
-
-export type PenguinsProps = {
-  width: number;
-  height: number;
-  margin?: { top: number; right: number; bottom: number; left: number };
-};
+import { groupBy } from "lodash";
+import { FunctionComponent } from "react";
 
 const defaultMargin = { top: 30, right: 30, bottom: 50, left: 100 };
 
 // accessors
 const billRatio = (d: Penguin) => d.billLength / d.billDepth;
-const getSpecies = (p: GroupedPenguin) => p.species;
 
-type GroupedPenguin = {
-  species: "Adelie" | "Chinstrap" | "Gentoo";
-  items: Penguin[];
-};
-
-const bySpecies: Array<GroupedPenguin> = tidy(
+const bySpecies = groupBy(
   penguins,
-  groupBy("species", [
-    summarize({
-      items: (a) => a,
-    }),
-  ])
+  'species'
 );
-const species = bySpecies.map(getSpecies).sort();
+const speciesList = Object.keys(bySpecies).sort();
 
-const yScale = scaleBand({ domain: species.slice().reverse() });
-const xScale = scaleLinear({ domain: extent(penguins, billRatio), nice: true });
-const colorScale = scaleOrdinal<string>({
-  domain: species,
+const colorScale = scaleOrdinal<string, string>({
+  domain: speciesList,
   range: ["#ff8c00", "#a034f0", "#036f6f"],
 });
 
@@ -49,35 +32,55 @@ export type PenguinsHistogramProps = {
   margin?: { top: number; right: number; bottom: number; left: number };
 };
 
+interface CenteredTextProps {
+  children: string;
+  height: number;
+}
+
+const CenteredText: FunctionComponent<CenteredTextProps> = ({ children, height }) => <Text
+  className="penguins-histogram-label"
+  x={0}
+  y={height / 2}
+  fill="currentColor"
+>
+  {children}
+</Text>;
+
+interface LabelsProps<Value extends string> {
+  top: number;
+  domain: Value[];
+  rowScale: ScaleBand<Value>;
+  colorScale: ScaleOrdinal<Value, string>;
+}
+
+function Labels<Value extends string>({ top, domain, rowScale, colorScale }: LabelsProps<Value>) {
+  return <Group top={top}>
+    {domain.map((value) => (
+      <Group key={value}
+             top={rowScale(value)}
+             style={{ color: colorScale(value) }}>
+        <CenteredText height={rowScale.bandwidth()}>{value.toUpperCase()}</CenteredText>
+      </Group>
+    ))}
+  </Group>
+}
+
 function PenguinsHistogram({
-  width,
-  height,
-  margin = defaultMargin,
-}: PenguinsHistogramProps) {
+                             width,
+                             height,
+                             margin = defaultMargin,
+                           }: PenguinsHistogramProps) {
   // bounds
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
 
-  yScale.range([yMax, 0]);
-  xScale.range([0, xMax]);
+  const yScale = scaleBand({ domain: speciesList, range: [yMax, 0], reverse: true });
+  const xScale = scaleLinear({ domain: extent(penguins, billRatio) as [number, number], nice: true, range: [0, xMax] });
 
   return (
     <div>
       <svg width={width} height={height}>
-        <Group top={margin.top}>
-          {species.map((s) => (
-            <Group key={s}>
-              <Text
-                className="penguins-histogram-label"
-                x={0}
-                y={yScale(s)}
-                fill={colorScale(s) as string}
-              >
-                {s.toUpperCase()}
-              </Text>
-            </Group>
-          ))}
-        </Group>
+        <Labels top={margin.top} domain={speciesList} rowScale={yScale} colorScale={colorScale} />
 
         <Group left={margin.left} top={margin.top}>
           <GridColumns
@@ -95,30 +98,59 @@ function PenguinsHistogram({
             labelClassName="penguins-axis-label"
             labelOffset={15}
           />
-          {species.map((s) => (
-            <Group key={s}>
-              {bySpecies
-                .filter((group) => group.species == s)[0]
-                .items.map((p) => (
-                  <Line
-                    className="penguins-histogram-line"
-                    stroke={colorScale(s) as string}
-                    from={{
-                      x: xScale(billRatio(p)),
-                      y: yScale(s) - 10,
-                    }}
-                    to={{
-                      x: xScale(billRatio(p)),
-                      y: yScale(s) + 10,
-                    }}
-                  />
-                ))}
-            </Group>
-          ))}
+          {speciesList.map((species) => {
+            const penguins = bySpecies[species];
+            const height = yScale.bandwidth();
+            const half = height * 0.5;
+            return (
+              <Group key={species}
+                     top={yScale(species)}
+                     style={{ color: colorScale(species) }}>
+                <Group top={half}>
+                  <TickMarks
+                    data={penguins}
+                    getX={billRatio}
+                    height={half}
+                    padding={10}
+                    xScale={xScale}/>
+                </Group>
+              </Group>
+            );
+          })}
         </Group>
       </svg>
     </div>
   );
+}
+
+interface TickMarsProps<Datum, Variable> {
+  data: Datum[];
+  getX: (datum: Datum) => Variable;
+  xScale: (value: Variable) => number;
+  height: number;
+  padding: number;
+}
+
+function TickMarks<Datum, Variable>({ data, getX, height, xScale, padding }: TickMarsProps<Datum, Variable>) {
+  return <>
+    {data.map((datum) => {
+      const x = xScale(getX(datum));
+      return (
+        <Line
+          className="penguins-histogram-line"
+          stroke="currentColor"
+          from={{
+            x,
+            y: padding,
+          }}
+          to={{
+            x,
+            y: height - padding,
+          }}
+        />
+      );
+    })}
+  </>
 }
 
 export default PenguinsHistogram;
