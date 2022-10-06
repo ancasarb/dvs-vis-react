@@ -68,21 +68,21 @@
   stroke: white;
 }
 
-.penguins-annotation-adelie {
+.summary-annotation-adelie {
   color: #ff8c00;
 }
 
-.penguins-annotation-chinstrap {
+.summary-annotation-chinstrap {
   color: #a034f0;
 }
 
-.penguins-annotation-gentoo {
+.summary-annotation-gentoo {
   color: #036f6f;
 }
 
-.penguins-annotation-adelie,
-.penguins-annotation-chinstrap,
-.penguins-annotation-gentoo {
+.summary-annotation-adelie,
+.summary-annotation-chinstrap,
+.summary-annotation-gentoo {
   font-size: 11px;
 }
 
