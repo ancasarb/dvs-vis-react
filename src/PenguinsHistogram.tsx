@@ -1,5 +1,5 @@
 import { penguins, Penguin } from "./data/penguins";
-import { groupBy } from "lodash";
+import { groupBy, mean } from "lodash";
 
 import { bin, extent, max } from "d3";
 import { scaleLinear, scaleBand, scaleOrdinal } from "@visx/scale";
@@ -8,7 +8,7 @@ import { curveMonotoneX } from "@visx/curve";
 import { Group } from "@visx/group";
 import { GridColumns } from "@visx/grid";
 import { AxisBottom } from "@visx/axis";
-import { Area } from "@visx/shape";
+import { Area, Circle } from "@visx/shape";
 import { Text } from "@visx/text";
 
 import Labels from "./components/Labels";
@@ -83,6 +83,7 @@ function PenguinsHistogram({
           />
           {speciesList.map((species) => {
             const penguins = bySpecies[species];
+
             const height = yScale.bandwidth();
             const half = height * 0.5;
 
@@ -99,6 +100,9 @@ function PenguinsHistogram({
               .domain([0, max(series, count)])
               .range([0, -half]);
             const yFn = (bin) => rowScale(count(bin));
+
+            const billRatioMean = mean(penguins.map(billRatio));
+            const meanX = xScale(mean(penguins.map(billRatio)));
 
             const xFinal = xFn(series[series.length - 1]);
 
@@ -121,8 +125,24 @@ function PenguinsHistogram({
                     curve={curveMonotoneX}
                     className="penguin-histogram"
                   />
+                  <Circle
+                    className="penguins-annotation-circle"
+                    cx={meanX}
+                    cy={0}
+                    r={3}
+                    stroke={colorScale(species)}
+                    fill={colorScale(species)}
+                  />
                   <Text
-                    x={xFinal + 5}
+                    x={meanX}
+                    y={-10}
+                    fill="white"
+                    className="penguins-histogram-annotation"
+                  >
+                    {billRatioMean.toFixed(2)}
+                  </Text>
+                  <Text
+                    x={xFinal + 25}
                     y={0}
                     fill={colorScale(species)}
                     className="penguins-histogram-annotation"
