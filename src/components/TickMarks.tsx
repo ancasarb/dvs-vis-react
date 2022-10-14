@@ -11,10 +11,11 @@ interface TickMarsProps<Datum, Variable> {
 
 function TickMarks<Datum, Variable>({ data, getX, height, xScale, padding, className }: TickMarsProps<Datum, Variable>) {
     return <>
-        {data.map((datum) => {
+        {data.map((datum, idx) => {
             const x = xScale(getX(datum));
             return (
                 <Line
+                    key={idx}
                     className={className}
                     stroke="currentColor"
                     from={{
