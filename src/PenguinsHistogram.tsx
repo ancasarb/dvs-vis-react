@@ -13,11 +13,11 @@ import { Text } from "@visx/text";
 
 import Labels from "./components/Labels";
 import TickMarks from "./components/TickMarks";
+import { useMemo, useState } from "react";
+import { accessorForVariable, titleForVariable, Variable } from "./model/variable";
+import VariableSelector from "./components/VariableSelector";
 
 const defaultMargin = { top: 30, right: 30, bottom: 50, left: 100 };
-
-// accessors
-const billRatio = (d: Penguin) => d.billLength / d.billDepth;
 
 const bySpecies = groupBy(penguins, "species");
 
@@ -43,19 +43,24 @@ function PenguinsHistogram({
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
 
+  const [variable, setVariable] = useState<Variable>('ratio');
+  const accessor = useMemo(() => accessorForVariable(variable), [variable]);
+  const title = titleForVariable(variable);
+
   const yScale = scaleBand({
     domain: speciesList,
     range: [yMax, 0],
     reverse: true,
   });
   const xScale = scaleLinear({
-    domain: extent(penguins, billRatio) as [number, number],
+    domain: extent(penguins, accessor) as [number, number],
     nice: true,
     range: [0, xMax],
   });
 
   return (
     <div>
+      <VariableSelector selected={variable} onSelect={setVariable} />
       <svg width={width} height={height}>
         <Labels
           top={margin.top}
@@ -77,7 +82,7 @@ function PenguinsHistogram({
             scale={xScale}
             hideAxisLine={true}
             tickStroke="#e0e0e0"
-            label="Bill ratio"
+            label={title}
             labelClassName="penguins-axis-label"
             labelOffset={15}
           />
@@ -87,7 +92,7 @@ function PenguinsHistogram({
             const half = height * 0.5;
 
             const binFn = bin<Penguin, number>()
-              .value(billRatio)
+              .value(accessor)
               .thresholds(20);
             const series = binFn(penguins);
 
@@ -134,7 +139,7 @@ function PenguinsHistogram({
                 <Group top={half}>
                   <TickMarks
                     data={penguins}
-                    getX={billRatio}
+                    getX={accessor}
                     height={half}
                     padding={10}
                     xScale={xScale}
