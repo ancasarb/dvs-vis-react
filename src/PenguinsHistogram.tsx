@@ -1,21 +1,23 @@
-import { penguins, Penguin } from "./data/penguins";
+import { Penguin, penguins } from "./data/penguins";
 import { groupBy } from "lodash";
-
 import { bin, extent, max } from "d3";
-import { scaleLinear, scaleBand, scaleOrdinal } from "@visx/scale";
-
+import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
 import { curveMonotoneX } from "@visx/curve";
 import { Group } from "@visx/group";
 import { GridColumns } from "@visx/grid";
 import { AxisBottom } from "@visx/axis";
 import { Area } from "@visx/shape";
 import { Text } from "@visx/text";
-
 import Labels from "./components/Labels";
 import TickMarks from "./components/TickMarks";
 import { useMemo, useState } from "react";
-import { accessorForVariable, titleForVariable, Variable } from "./model/variable";
+import {
+  accessorForVariable,
+  titleForVariable,
+  Variable,
+} from "./model/variable";
 import VariableSelector from "./components/VariableSelector";
+import { Card, Space } from "antd";
 
 const defaultMargin = { top: 30, right: 30, bottom: 50, left: 100 };
 
@@ -43,7 +45,7 @@ function PenguinsHistogram({
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
 
-  const [variable, setVariable] = useState<Variable>('ratio');
+  const [variable, setVariable] = useState<Variable>("ratio");
   const accessor = useMemo(() => accessorForVariable(variable), [variable]);
   const title = titleForVariable(variable);
 
@@ -59,100 +61,102 @@ function PenguinsHistogram({
   });
 
   return (
-    <div>
-      <VariableSelector selected={variable} onSelect={setVariable} />
-      <svg width={width} height={height}>
-        <Labels
-          top={margin.top}
-          domain={speciesList}
-          rowScale={yScale}
-          colorScale={colorScale}
-          className="penguins-histogram-label"
-        />
-
-        <Group left={margin.left} top={margin.top}>
-          <GridColumns
-            scale={xScale}
-            width={xMax}
-            height={yMax}
-            stroke="#e0e0e0"
+    <Card>
+      <Space direction="vertical" size="large">
+        <VariableSelector selected={variable} onSelect={setVariable} />
+        <svg width={width} height={height}>
+          <Labels
+            top={margin.top}
+            domain={speciesList}
+            rowScale={yScale}
+            colorScale={colorScale}
+            className="penguins-histogram-label"
           />
-          <AxisBottom
-            top={yMax}
-            scale={xScale}
-            hideAxisLine={true}
-            tickStroke="#e0e0e0"
-            label={title}
-            labelClassName="penguins-axis-label"
-            labelOffset={15}
-          />
-          {speciesList.map((species) => {
-            const penguins = bySpecies[species];
-            const height = yScale.bandwidth();
-            const half = height * 0.5;
 
-            const binFn = bin<Penguin, number>()
-              .value(accessor)
-              .thresholds(20);
-            type MyBin = Array<Penguin> & { x0: number, x1: number };
-            const series = binFn(penguins) as MyBin[];
+          <Group left={margin.left} top={margin.top}>
+            <GridColumns
+              scale={xScale}
+              width={xMax}
+              height={yMax}
+              stroke="#e0e0e0"
+            />
+            <AxisBottom
+              top={yMax}
+              scale={xScale}
+              hideAxisLine={true}
+              tickStroke="#e0e0e0"
+              label={title}
+              labelClassName="penguins-axis-label"
+              labelOffset={15}
+            />
+            {speciesList.map((species) => {
+              const penguins = bySpecies[species];
+              const height = yScale.bandwidth();
+              const half = height * 0.5;
 
-            const count = (bin: MyBin) => bin.length;
-            const binMidPoint = (bin: MyBin) => (bin.x0 + bin.x1) / 2;
+              const binFn = bin<Penguin, number>()
+                .value(accessor)
+                .thresholds(20);
+              type MyBin = Array<Penguin> & { x0: number; x1: number };
+              const series = binFn(penguins) as MyBin[];
 
-            const xFn = (bin: MyBin) => xScale(binMidPoint(bin));
-            const rowScale = scaleLinear()
-              .domain([0, max(series, count) as any])
-              .range([half, 0]);
-            const yFn = (bin: MyBin) => rowScale(count(bin));
+              const count = (bin: MyBin) => bin.length;
+              const binMidPoint = (bin: MyBin) => (bin.x0 + bin.x1) / 2;
 
-            const xFinal = xFn(series[series.length - 1]);
+              const xFn = (bin: MyBin) => xScale(binMidPoint(bin));
+              const rowScale = scaleLinear()
+                .domain([0, max(series, count) as any])
+                .range([half, 0]);
+              const yFn = (bin: MyBin) => rowScale(count(bin));
 
-            return (
-              <Group
-                key={species}
-                top={yScale(species)}
-                style={{ color: colorScale(species) }}
-              >
-                <Group top={0}>
-                  <Area
-                    data={series}
-                    x0={xFn}
-                    x1={xFn}
-                    y1={yFn as any}
-                    y0={() => half}
-                    strokeWidth={1}
-                    stroke={colorScale(species)}
-                    fill={colorScale(species)}
-                    curve={curveMonotoneX}
-                    className="penguin-histogram"
-                  />
-                  <Text
-                    x={xFinal + 5}
-                    y={0}
-                    fill={colorScale(species)}
-                    className="penguins-histogram-annotation"
-                  >
-                    {"n = " + penguins.length}
-                  </Text>
+              const xFinal = xFn(series[series.length - 1]);
+
+              return (
+                <Group
+                  key={species}
+                  top={yScale(species)}
+                  style={{ color: colorScale(species) }}
+                >
+                  <Group top={0}>
+                    <Area
+                      data={series}
+                      x0={xFn}
+                      x1={xFn}
+                      y1={yFn as any}
+                      y0={() => half}
+                      strokeWidth={1}
+                      stroke={colorScale(species)}
+                      fill={colorScale(species)}
+                      curve={curveMonotoneX}
+                      className="penguin-histogram"
+                    />
+                    <Text
+                      x={xFinal + 5}
+                      y={0}
+                      fill={colorScale(species)}
+                      className="penguins-histogram-annotation"
+                    >
+                      {"n = " + penguins.length}
+                    </Text>
+                  </Group>
+
+                  <Group top={half}>
+                    <TickMarks
+                      data={penguins}
+                      getX={accessor}
+                      height={half}
+                      padding={10}
+                      xScale={xScale}
+                      className="penguins-histogram-line"
+                    />
+                  </Group>
                 </Group>
-
-                <Group top={half}>
-                  <TickMarks
-                    data={penguins}
-                    getX={accessor}
-                    height={half}
-                    padding={10}
-                    xScale={xScale}
-                    className="penguins-histogram-line"
-                  />
-                </Group>
-              </Group>
-            );
-          })}
-        </Group>
-      </svg>
-    </div>
+              );
+            })}
+          </Group>
+        </svg>
+      </Space>
+    </Card>
   );
 }
 

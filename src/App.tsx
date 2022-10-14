@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import "antd/dist/antd.css";
 import Cities from "./Cities";
-
 import { shuffle } from "lodash";
 import PenguinsScatterplot from "./PenguinsScatterplot";
 import PenguinsHistogram from "./PenguinsHistogram";
