@@ -106,10 +106,16 @@
   color: black;
 }
 
-.penguins-histogram-line {
+.penguins-histogram-line,
+.penguin-histogram {
   opacity: 0.7;
 }
 
 .penguins-histogram-label {
+  font-weight: bold;
+}
+
+.penguins-histogram-annotation {
+  font-size: 12px;
   font-weight: bold;
 }

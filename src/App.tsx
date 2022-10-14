@@ -4,7 +4,7 @@ import "./App.css";
 import Cities from "./Cities";
 
 import { shuffle } from "lodash";
-import Penguins from "./Penguins";
+import PenguinsScatterplot from "./PenguinsScatterplot";
 import PenguinsHistogram from "./PenguinsHistogram";
 
 export type AppProps = {
@@ -38,7 +38,10 @@ function App(props: AppProps) {
           path="cities"
           element={<Cities {...{ ...props, ...cities }} />}
         />
-        <Route path="penguins" element={<Penguins {...props} />} />
+        <Route
+          path="penguinsScatterplot"
+          element={<PenguinsScatterplot {...props} />}
+        />
         <Route
           path="penguinsHistogram"
           element={<PenguinsHistogram {...props} />}

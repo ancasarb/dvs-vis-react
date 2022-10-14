@@ -13,7 +13,7 @@ import VerticalAnnotationBar from "./components/VerticalAnnotationBar";
 import SummaryAnnotations from "./components/SummaryAnnotation";
 import PenguinsLegend from "./components/PenguinsLegend";
 
-export type PenguinsProps = {
+export type PenguinsScatterplotProps = {
   width: number;
   height: number;
   margin?: { top: number; right: number; bottom: number; left: number };
@@ -69,7 +69,11 @@ const deviationCalculator = (s: string, accessor: (p: Penguin) => number) => {
   return deviation(penguins.filter((p) => species(p) === s).map(accessor));
 };
 
-function Penguins({ width, height, margin = defaultMargin }: PenguinsProps) {
+function PenguinsScatterplot({
+  width,
+  height,
+  margin = defaultMargin,
+}: PenguinsScatterplotProps) {
   // bounds
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
@@ -218,4 +222,4 @@ function Penguins({ width, height, margin = defaultMargin }: PenguinsProps) {
   );
 }
 
-export default Penguins;
+export default PenguinsScatterplot;
