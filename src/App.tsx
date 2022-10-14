@@ -6,6 +6,7 @@ import Cities from "./Cities";
 import { shuffle } from "lodash";
 import PenguinsScatterplot from "./PenguinsScatterplot";
 import PenguinsHistogram from "./PenguinsHistogram";
+import Index from "./Index";
 
 export type AppProps = {
   width: number;
@@ -34,6 +35,7 @@ function App(props: AppProps) {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Index />} />
         <Route
           path="cities"
           element={<Cities {...{ ...props, ...cities }} />}
