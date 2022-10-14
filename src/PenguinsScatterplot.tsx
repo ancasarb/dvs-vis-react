@@ -25,9 +25,10 @@ const defaultMargin = { top: 30, right: 30, bottom: 50, left: 60 };
 const billLength = (p: Penguin) => p.billLength;
 const billDepth = (p: Penguin) => p.billDepth;
 const bodyMass = (p: Penguin) => p.bodyMass;
-const species = (p: Penguin) => p.species.toLowerCase();
+const species = (p: Penguin) => p.species;
 
-const penguinSpecies = [...new Set(penguins.map(species))].sort();
+type Species = Penguin['species'];
+const penguinSpecies: Species[] = [...new Set(penguins.map(species))].sort();
 
 const yScale = scaleLinear<number>({
   domain: [12, Math.max(...penguins.map(billDepth))],
@@ -93,19 +94,19 @@ function PenguinsScatterplot({
 
   const gentooAnchor = find(penguins, (p) => billLength(p) > 59) as Penguin;
 
-  const summaryAnnotations: Map<
-    "adelie" | "chinstrap" | "gentoo",
+  const summaryAnnotations: Record<
+    Species,
     { x: number; y: number }
   > = {
-    adelie: {
+    Adelie: {
       x: xScale(billLength(adelieAnchor)) + 60,
       y: yScale(billDepth(adelieAnchor)) + 50,
     },
-    chinstrap: {
+    Chinstrap: {
       x: xScale(billLength(chinstrapAnchor)) + 55,
       y: yScale(billDepth(chinstrapAnchor)) - 12,
     },
-    gentoo: {
+    Gentoo: {
       x: xScale(billLength(gentooAnchor)),
       y: yScale(billDepth(gentooAnchor)) + 150,
     },
@@ -150,6 +151,7 @@ function PenguinsScatterplot({
           <Group name="annotations">
             {penguinSpecies.map((s) => (
               <HorizontalAnnotationBar
+                key={s}
                 name={s}
                 color={annotationColorScale(s) as string}
                 xStart={xScale(
@@ -167,6 +169,7 @@ function PenguinsScatterplot({
 
             {penguinSpecies.map((s) => (
               <VerticalAnnotationBar
+                key={s}
                 name={s}
                 color={annotationColorScale(s) as string}
                 x={xScale(medianCalculator(s, billLength) as number)}
@@ -183,8 +186,9 @@ function PenguinsScatterplot({
             ))}
             {penguinSpecies.map((s) => (
               <SummaryAnnotations
-                x={summaryAnnotations[s.toLocaleLowerCase()].x as number}
-                y={summaryAnnotations[s.toLocaleLowerCase()].y as number}
+                key={s}
+                x={summaryAnnotations[s].x as number}
+                y={summaryAnnotations[s].y as number}
                 title={s.toUpperCase()}
                 titleClassName="penguins-annotation-title"
                 classSuffix={s}

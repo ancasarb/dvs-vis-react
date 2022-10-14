@@ -25,8 +25,8 @@ function SummaryAnnotations({ x, y, title, titleClassName, summaries, classSuffi
                 <div className={titleClassName}>
                     {title}
                 </div>
-                {summaries.map((summary) => (
-                    <div style={{ width: "150px" }}>
+                {summaries.map((summary, idx) => (
+                    <div key={idx} style={{ width: "150px" }}>
                         {summary}
                     </div>
                 ))}

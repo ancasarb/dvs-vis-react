@@ -94,16 +94,17 @@ function PenguinsHistogram({
             const binFn = bin<Penguin, number>()
               .value(accessor)
               .thresholds(20);
-            const series = binFn(penguins);
+            type MyBin = Array<Penguin> & { x0: number, x1: number };
+            const series = binFn(penguins) as MyBin[];
 
-            const count = (bin) => bin.length;
-            const binMidPoint = (bin) => (bin.x0 + bin.x1) / 2;
+            const count = (bin: MyBin) => bin.length;
+            const binMidPoint = (bin: MyBin) => (bin.x0 + bin.x1) / 2;
 
-            const xFn = (bin) => xScale(binMidPoint(bin));
+            const xFn = (bin: MyBin) => xScale(binMidPoint(bin));
             const rowScale = scaleLinear()
-              .domain([0, max(series, count)])
-              .range([0, -half]);
-            const yFn = (bin) => rowScale(count(bin));
+              .domain([0, max(series, count) as any])
+              .range([half, 0]);
+            const yFn = (bin: MyBin) => rowScale(count(bin));
 
             const xFinal = xFn(series[series.length - 1]);
 
@@ -113,13 +114,13 @@ function PenguinsHistogram({
                 top={yScale(species)}
                 style={{ color: colorScale(species) }}
               >
-                <Group top={half}>
+                <Group top={0}>
                   <Area
                     data={series}
                     x0={xFn}
                     x1={xFn}
-                    y1={yFn}
-                    y0={(bin) => 0}
+                    y1={yFn as any}
+                    y0={() => half}
                     strokeWidth={1}
                     stroke={colorScale(species)}
                     fill={colorScale(species)}
