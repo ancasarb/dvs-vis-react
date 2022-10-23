@@ -3036,15 +3036,6 @@ export const penguins: Penguin[] = [
   {
     species: "Gentoo",
     island: "Biscoe",
-    billLength: 44.5,
-    billDepth: 15.7,
-    flipperLength: 217,
-    bodyMass: 4875,
-    sex: ".",
-  },
-  {
-    species: "Gentoo",
-    island: "Biscoe",
     billLength: 48.8,
     billDepth: 16.2,
     flipperLength: 222,

@@ -1,11 +1,15 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-import Cities from "./Cities";
 
-import { shuffle } from "lodash";
+import "./App.css";
+import "antd/dist/antd.css";
+
+import Cities from "./Cities";
+import Index from "./Index";
 import PenguinsScatterplot from "./PenguinsScatterplot";
 import PenguinsHistogram from "./PenguinsHistogram";
+
+import { shuffle } from "lodash";
 
 export type AppProps = {
   width: number;
@@ -34,6 +38,7 @@ function App(props: AppProps) {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Index />} />
         <Route
           path="cities"
           element={<Cities {...{ ...props, ...cities }} />}

@@ -15,6 +15,7 @@
     "@types/react-dom": "^18.0.6",
     "@visx/visx": "^2.13.0",
     "@vitejs/plugin-react": "^2.0.1",
+    "antd": "^4.23.6",
     "d3": "^7.6.1",
     "lodash": "^4.17.21",
     "prettier": "2.7.1",
