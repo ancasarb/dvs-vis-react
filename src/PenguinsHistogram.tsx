@@ -18,6 +18,8 @@ import {
 } from "./model/variable";
 import VariableSelector from "./components/VariableSelector";
 import { Card, Space } from "antd";
+import { TickMarksType } from "./model/tickmarks";
+import TickMarksSelector from "./components/TickMarksSelector";
 
 const defaultMargin = { top: 30, right: 30, bottom: 50, left: 100 };
 
@@ -49,6 +51,8 @@ function PenguinsHistogram({
   const accessor = useMemo(() => accessorForVariable(variable), [variable]);
   const title = titleForVariable(variable);
 
+  const [tickMarksType, setTickMarksType] = useState<TickMarksType>("line");
+
   const yScale = scaleBand({
     domain: speciesList,
     range: [yMax, 0],
@@ -64,6 +68,10 @@ function PenguinsHistogram({
     <Card>
       <Space direction="vertical" size="large">
         <VariableSelector selected={variable} onSelect={setVariable} />
+        <TickMarksSelector
+          selected={tickMarksType}
+          onSelect={setTickMarksType}
+        />
         <svg width={width} height={height}>
           <Labels
             top={margin.top}
@@ -97,7 +105,11 @@ function PenguinsHistogram({
               const binFn = bin<Penguin, number>()
                 .value(accessor)
                 .thresholds(20);
-              type MyBin = Array<Penguin> & { x0: number; x1: number };
+              type MyBin = Array<Penguin> & {
+                x0: number;
+                x1: number;
+                length: number;
+              };
               const series = binFn(penguins) as MyBin[];
 
               const count = (bin: MyBin) => bin.length;
@@ -105,7 +117,7 @@ function PenguinsHistogram({
 
               const xFn = (bin: MyBin) => xScale(binMidPoint(bin));
               const rowScale = scaleLinear()
-                .domain([0, max(series, count) as any])
+                .domain([0, max(series, count) as number])
                 .range([half, 0]);
               const yFn = (bin: MyBin) => rowScale(count(bin));
 
@@ -168,6 +180,7 @@ function PenguinsHistogram({
                       height={half}
                       padding={10}
                       xScale={xScale}
+                      type={tickMarksType}
                       className="penguins-histogram-line"
                     />
                   </Group>
