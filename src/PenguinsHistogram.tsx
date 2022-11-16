@@ -64,10 +64,15 @@ function PenguinsHistogram({
     range: [0, xMax],
   });
 
+  const onVariableSelect = (value: Variable) => {
+    setVariable(value);
+    setTickMarksType("line");
+  };
+
   return (
     <Card>
       <Space direction="vertical" size="large">
-        <VariableSelector selected={variable} onSelect={setVariable} />
+        <VariableSelector selected={variable} onSelect={onVariableSelect} />
         <TickMarksSelector
           selected={tickMarksType}
           onSelect={setTickMarksType}
