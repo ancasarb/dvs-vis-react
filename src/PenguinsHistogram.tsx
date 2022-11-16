@@ -163,12 +163,12 @@ function PenguinsHistogram({
                         {billRatioMean.toFixed(2)}
                       </Text>
                       <Text
-                        x={xFinal + 25}
+                        x={xFinal + 2}
                         y={0}
                         fill={colorScale(species)}
                         className="penguins-histogram-annotation"
                       >
-                        {"n = " + penguins.length}
+                        {"n=" + penguins.length}
                       </Text>
                     </Group>
                   </Group>

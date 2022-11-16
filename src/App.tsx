@@ -26,15 +26,15 @@ function App(props: AppProps) {
       secondCity: allCities[1],
     };
   });
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      const shuffled = shuffle(cities);
-      setCities({ firstCity: shuffled[0], secondCity: shuffled[1] });
-    }, 10000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  // React.useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const shuffled = shuffle(cities);
+  //     setCities({ firstCity: shuffled[0], secondCity: shuffled[1] });
+  //   }, 10000);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
   return (
     <BrowserRouter>
       <Routes>

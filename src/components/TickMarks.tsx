@@ -1,6 +1,7 @@
-import { Line, Circle } from "@visx/shape";
+import { Line } from "@visx/shape";
 import { random } from "lodash";
 import { TickMarksType } from "../model/tickmarks";
+import { useSpring, animated } from "react-spring";
 
 import { Group } from "@visx/group";
 
@@ -27,6 +28,7 @@ function TickMarks<Datum, Variable>({
     <>
       {data.map((datum, idx) => {
         const x = xScale(getX(datum));
+        const styles = useSpring({ opacity: type === "circle" ? 1 : 0 });
 
         if (type === "line") {
           return (
@@ -47,9 +49,9 @@ function TickMarks<Datum, Variable>({
         } else {
           const y = random(padding, height - padding, true);
           return (
-            <Group>
+            <Group key={"g-" + idx}>
               <Line
-                key={idx}
+                key={"l-" + idx}
                 className={className + "-out"}
                 stroke="currentColor"
                 from={{
@@ -62,8 +64,10 @@ function TickMarks<Datum, Variable>({
                 }}
               />
 
-              <Circle
+              <animated.circle
+                style={styles}
                 className="penguins-annotation-circle"
+                key={"c-" + idx}
                 cx={x}
                 cy={y}
                 r={2.5}
