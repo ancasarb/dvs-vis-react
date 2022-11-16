@@ -24,11 +24,12 @@ function TickMarks<Datum, Variable>({
   className,
   type,
 }: TickMarsProps<Datum, Variable>) {
+  const styles = useSpring({ opacity: type === "circle" ? 1 : 0 });
+
   return (
     <>
       {data.map((datum, idx) => {
         const x = xScale(getX(datum));
-        const styles = useSpring({ opacity: type === "circle" ? 1 : 0 });
 
         if (type === "line") {
           return (
