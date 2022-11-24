@@ -16,6 +16,7 @@ import TickMarksSelector from "./components/TickMarksSelector";
 import { TickMarksType } from "./model/tickmarks";
 
 import { useMemo, useReducer } from "react";
+import { useTransition } from "react-spring";
 import {
   accessorForVariable,
   titleForVariable,
@@ -102,6 +103,15 @@ function PenguinsHistogram({
   const onTicksTypeSelect = (value: TickMarksType) => {
     dispatch({ type: "change_ticks", newTicks: value });
   };
+
+  const transition = useTransition<boolean, { opacity: 0 | 1 }>(
+    ticks === "circle",
+    {
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+    }
+  );
 
   return (
     <Card>
@@ -227,7 +237,7 @@ function PenguinsHistogram({
                         padding={10}
                         className="penguins-annotation-circle"
                         xScale={xScale}
-                        type={ticks}
+                        transition={transition}
                       />
                     )}
                   </Group>
