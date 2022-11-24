@@ -1,5 +1,5 @@
 export interface Penguin {
-  species: "Adelie" | "Chinstrap" | "Gentoo";
+  species: "adelie" | "chinstrap" | "gentoo";
   island: string;
   billLength: number;
   billDepth: number;
@@ -10,7 +10,7 @@ export interface Penguin {
 
 export const penguins: Penguin[] = [
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 39.1,
     billDepth: 18.7,
@@ -19,7 +19,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 39.5,
     billDepth: 17.4,
@@ -28,7 +28,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 40.3,
     billDepth: 18,
@@ -37,7 +37,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   //   {
-  //     species: "Adelie",
+  //     species: "adelie",
   //     island: "Torgersen",
   //     billLength: null,
   //     billDepth: null,
@@ -46,7 +46,7 @@ export const penguins: Penguin[] = [
   //     sex: null,
   //   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 36.7,
     billDepth: 19.3,
@@ -55,7 +55,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 39.3,
     billDepth: 20.6,
@@ -64,7 +64,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 38.9,
     billDepth: 17.8,
@@ -73,7 +73,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 39.2,
     billDepth: 19.6,
@@ -82,7 +82,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 34.1,
     billDepth: 18.1,
@@ -91,7 +91,7 @@ export const penguins: Penguin[] = [
     sex: null,
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 42,
     billDepth: 20.2,
@@ -100,7 +100,7 @@ export const penguins: Penguin[] = [
     sex: null,
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 37.8,
     billDepth: 17.1,
@@ -109,7 +109,7 @@ export const penguins: Penguin[] = [
     sex: null,
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 37.8,
     billDepth: 17.3,
@@ -118,7 +118,7 @@ export const penguins: Penguin[] = [
     sex: null,
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 41.1,
     billDepth: 17.6,
@@ -127,7 +127,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 38.6,
     billDepth: 21.2,
@@ -136,7 +136,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 34.6,
     billDepth: 21.1,
@@ -145,7 +145,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 36.6,
     billDepth: 17.8,
@@ -154,7 +154,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 38.7,
     billDepth: 19,
@@ -163,7 +163,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 42.5,
     billDepth: 20.7,
@@ -172,7 +172,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 34.4,
     billDepth: 18.4,
@@ -181,7 +181,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 46,
     billDepth: 21.5,
@@ -190,7 +190,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 37.8,
     billDepth: 18.3,
@@ -199,7 +199,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 37.7,
     billDepth: 18.7,
@@ -208,7 +208,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 35.9,
     billDepth: 19.2,
@@ -217,7 +217,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 38.2,
     billDepth: 18.1,
@@ -226,7 +226,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 38.8,
     billDepth: 17.2,
@@ -235,7 +235,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 35.3,
     billDepth: 18.9,
@@ -244,7 +244,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 40.6,
     billDepth: 18.6,
@@ -253,7 +253,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 40.5,
     billDepth: 17.9,
@@ -262,7 +262,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 37.9,
     billDepth: 18.6,
@@ -271,7 +271,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 40.5,
     billDepth: 18.9,
@@ -280,7 +280,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 39.5,
     billDepth: 16.7,
@@ -289,7 +289,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 37.2,
     billDepth: 18.1,
@@ -298,7 +298,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 39.5,
     billDepth: 17.8,
@@ -307,7 +307,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 40.9,
     billDepth: 18.9,
@@ -316,7 +316,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36.4,
     billDepth: 17,
@@ -325,7 +325,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 39.2,
     billDepth: 21.1,
@@ -334,7 +334,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 38.8,
     billDepth: 20,
@@ -343,7 +343,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 42.2,
     billDepth: 18.5,
@@ -352,7 +352,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 37.6,
     billDepth: 19.3,
@@ -361,7 +361,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 39.8,
     billDepth: 19.1,
@@ -370,7 +370,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36.5,
     billDepth: 18,
@@ -379,7 +379,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 40.8,
     billDepth: 18.4,
@@ -388,7 +388,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36,
     billDepth: 18.5,
@@ -397,7 +397,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 44.1,
     billDepth: 19.7,
@@ -406,7 +406,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 37,
     billDepth: 16.9,
@@ -415,7 +415,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 39.6,
     billDepth: 18.8,
@@ -424,7 +424,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 41.1,
     billDepth: 19,
@@ -433,7 +433,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 37.5,
     billDepth: 18.9,
@@ -442,7 +442,7 @@ export const penguins: Penguin[] = [
     sex: null,
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36,
     billDepth: 17.9,
@@ -451,7 +451,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 42.3,
     billDepth: 21.2,
@@ -460,7 +460,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 39.6,
     billDepth: 17.7,
@@ -469,7 +469,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 40.1,
     billDepth: 18.9,
@@ -478,7 +478,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 35,
     billDepth: 17.9,
@@ -487,7 +487,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 42,
     billDepth: 19.5,
@@ -496,7 +496,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 34.5,
     billDepth: 18.1,
@@ -505,7 +505,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 41.4,
     billDepth: 18.6,
@@ -514,7 +514,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 39,
     billDepth: 17.5,
@@ -523,7 +523,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 40.6,
     billDepth: 18.8,
@@ -532,7 +532,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 36.5,
     billDepth: 16.6,
@@ -541,7 +541,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 37.6,
     billDepth: 19.1,
@@ -550,7 +550,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 35.7,
     billDepth: 16.9,
@@ -559,7 +559,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 41.3,
     billDepth: 21.1,
@@ -568,7 +568,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 37.6,
     billDepth: 17,
@@ -577,7 +577,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 41.1,
     billDepth: 18.2,
@@ -586,7 +586,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 36.4,
     billDepth: 17.1,
@@ -595,7 +595,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 41.6,
     billDepth: 18,
@@ -604,7 +604,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 35.5,
     billDepth: 16.2,
@@ -613,7 +613,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 41.1,
     billDepth: 19.1,
@@ -622,7 +622,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 35.9,
     billDepth: 16.6,
@@ -631,7 +631,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 41.8,
     billDepth: 19.4,
@@ -640,7 +640,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 33.5,
     billDepth: 19,
@@ -649,7 +649,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 39.7,
     billDepth: 18.4,
@@ -658,7 +658,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 39.6,
     billDepth: 17.2,
@@ -667,7 +667,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 45.8,
     billDepth: 18.9,
@@ -676,7 +676,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 35.5,
     billDepth: 17.5,
@@ -685,7 +685,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 42.8,
     billDepth: 18.5,
@@ -694,7 +694,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 40.9,
     billDepth: 16.8,
@@ -703,7 +703,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 37.2,
     billDepth: 19.4,
@@ -712,7 +712,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 36.2,
     billDepth: 16.1,
@@ -721,7 +721,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 42.1,
     billDepth: 19.1,
@@ -730,7 +730,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 34.6,
     billDepth: 17.2,
@@ -739,7 +739,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 42.9,
     billDepth: 17.6,
@@ -748,7 +748,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 36.7,
     billDepth: 18.8,
@@ -757,7 +757,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 35.1,
     billDepth: 19.4,
@@ -766,7 +766,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 37.3,
     billDepth: 17.8,
@@ -775,7 +775,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 41.3,
     billDepth: 20.3,
@@ -784,7 +784,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36.3,
     billDepth: 19.5,
@@ -793,7 +793,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36.9,
     billDepth: 18.6,
@@ -802,7 +802,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 38.3,
     billDepth: 19.2,
@@ -811,7 +811,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 38.9,
     billDepth: 18.8,
@@ -820,7 +820,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 35.7,
     billDepth: 18,
@@ -829,7 +829,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 41.1,
     billDepth: 18.1,
@@ -838,7 +838,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 34,
     billDepth: 17.1,
@@ -847,7 +847,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 39.6,
     billDepth: 18.1,
@@ -856,7 +856,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36.2,
     billDepth: 17.3,
@@ -865,7 +865,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 40.8,
     billDepth: 18.9,
@@ -874,7 +874,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 38.1,
     billDepth: 18.6,
@@ -883,7 +883,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 40.3,
     billDepth: 18.5,
@@ -892,7 +892,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 33.1,
     billDepth: 16.1,
@@ -901,7 +901,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 43.2,
     billDepth: 18.5,
@@ -910,7 +910,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 35,
     billDepth: 17.9,
@@ -919,7 +919,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 41,
     billDepth: 20,
@@ -928,7 +928,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 37.7,
     billDepth: 16,
@@ -937,7 +937,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 37.8,
     billDepth: 20,
@@ -946,7 +946,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 37.9,
     billDepth: 18.6,
@@ -955,7 +955,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 39.7,
     billDepth: 18.9,
@@ -964,7 +964,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 38.6,
     billDepth: 17.2,
@@ -973,7 +973,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 38.2,
     billDepth: 20,
@@ -982,7 +982,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 38.1,
     billDepth: 17,
@@ -991,7 +991,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 43.2,
     billDepth: 19,
@@ -1000,7 +1000,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 38.1,
     billDepth: 16.5,
@@ -1009,7 +1009,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 45.6,
     billDepth: 20.3,
@@ -1018,7 +1018,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 39.7,
     billDepth: 17.7,
@@ -1027,7 +1027,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 42.2,
     billDepth: 19.5,
@@ -1036,7 +1036,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 39.6,
     billDepth: 20.7,
@@ -1045,7 +1045,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Biscoe",
     billLength: 42.7,
     billDepth: 18.3,
@@ -1054,7 +1054,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 38.6,
     billDepth: 17,
@@ -1063,7 +1063,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 37.3,
     billDepth: 20.5,
@@ -1072,7 +1072,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 35.7,
     billDepth: 17,
@@ -1081,7 +1081,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 41.1,
     billDepth: 18.6,
@@ -1090,7 +1090,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 36.2,
     billDepth: 17.2,
@@ -1099,7 +1099,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 37.7,
     billDepth: 19.8,
@@ -1108,7 +1108,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 40.2,
     billDepth: 17,
@@ -1117,7 +1117,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 41.4,
     billDepth: 18.5,
@@ -1126,7 +1126,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 35.2,
     billDepth: 15.9,
@@ -1135,7 +1135,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 40.6,
     billDepth: 19,
@@ -1144,7 +1144,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 38.8,
     billDepth: 17.6,
@@ -1153,7 +1153,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 41.5,
     billDepth: 18.3,
@@ -1162,7 +1162,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 39,
     billDepth: 17.1,
@@ -1171,7 +1171,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 44.1,
     billDepth: 18,
@@ -1180,7 +1180,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 38.5,
     billDepth: 17.9,
@@ -1189,7 +1189,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Torgersen",
     billLength: 43.1,
     billDepth: 19.2,
@@ -1198,7 +1198,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36.8,
     billDepth: 18.5,
@@ -1207,7 +1207,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 37.5,
     billDepth: 18.5,
@@ -1216,7 +1216,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 38.1,
     billDepth: 17.6,
@@ -1225,7 +1225,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 41.1,
     billDepth: 17.5,
@@ -1234,7 +1234,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 35.6,
     billDepth: 17.5,
@@ -1243,7 +1243,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 40.2,
     billDepth: 20.1,
@@ -1252,7 +1252,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 37,
     billDepth: 16.5,
@@ -1261,7 +1261,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 39.7,
     billDepth: 17.9,
@@ -1270,7 +1270,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 40.2,
     billDepth: 17.1,
@@ -1279,7 +1279,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 40.6,
     billDepth: 17.2,
@@ -1288,7 +1288,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 32.1,
     billDepth: 15.5,
@@ -1297,7 +1297,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 40.7,
     billDepth: 17,
@@ -1306,7 +1306,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 37.3,
     billDepth: 16.8,
@@ -1315,7 +1315,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 39,
     billDepth: 18.7,
@@ -1324,7 +1324,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 39.2,
     billDepth: 18.6,
@@ -1333,7 +1333,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36.6,
     billDepth: 18.4,
@@ -1342,7 +1342,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36,
     billDepth: 17.8,
@@ -1351,7 +1351,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 37.8,
     billDepth: 18.1,
@@ -1360,7 +1360,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 36,
     billDepth: 17.1,
@@ -1369,7 +1369,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Adelie",
+    species: "adelie",
     island: "Dream",
     billLength: 41.5,
     billDepth: 18.5,
@@ -1378,7 +1378,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 46.5,
     billDepth: 17.9,
@@ -1387,7 +1387,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50,
     billDepth: 19.5,
@@ -1396,7 +1396,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 51.3,
     billDepth: 19.2,
@@ -1405,7 +1405,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 45.4,
     billDepth: 18.7,
@@ -1414,7 +1414,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 52.7,
     billDepth: 19.8,
@@ -1423,7 +1423,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 45.2,
     billDepth: 17.8,
@@ -1432,7 +1432,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 46.1,
     billDepth: 18.2,
@@ -1441,7 +1441,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 51.3,
     billDepth: 18.2,
@@ -1450,7 +1450,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 46,
     billDepth: 18.9,
@@ -1459,7 +1459,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 51.3,
     billDepth: 19.9,
@@ -1468,7 +1468,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 46.6,
     billDepth: 17.8,
@@ -1477,7 +1477,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 51.7,
     billDepth: 20.3,
@@ -1486,7 +1486,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 47,
     billDepth: 17.3,
@@ -1495,7 +1495,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 52,
     billDepth: 18.1,
@@ -1504,7 +1504,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 45.9,
     billDepth: 17.1,
@@ -1513,7 +1513,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.5,
     billDepth: 19.6,
@@ -1522,7 +1522,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.3,
     billDepth: 20,
@@ -1531,7 +1531,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 58,
     billDepth: 17.8,
@@ -1540,7 +1540,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 46.4,
     billDepth: 18.6,
@@ -1549,7 +1549,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 49.2,
     billDepth: 18.2,
@@ -1558,7 +1558,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 42.4,
     billDepth: 17.3,
@@ -1567,7 +1567,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 48.5,
     billDepth: 17.5,
@@ -1576,7 +1576,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 43.2,
     billDepth: 16.6,
@@ -1585,7 +1585,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.6,
     billDepth: 19.4,
@@ -1594,7 +1594,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 46.7,
     billDepth: 17.9,
@@ -1603,7 +1603,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 52,
     billDepth: 19,
@@ -1612,7 +1612,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.5,
     billDepth: 18.4,
@@ -1621,7 +1621,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 49.5,
     billDepth: 19,
@@ -1630,7 +1630,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 46.4,
     billDepth: 17.8,
@@ -1639,7 +1639,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 52.8,
     billDepth: 20,
@@ -1648,7 +1648,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 40.9,
     billDepth: 16.6,
@@ -1657,7 +1657,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 54.2,
     billDepth: 20.8,
@@ -1666,7 +1666,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 42.5,
     billDepth: 16.7,
@@ -1675,7 +1675,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 51,
     billDepth: 18.8,
@@ -1684,7 +1684,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 49.7,
     billDepth: 18.6,
@@ -1693,7 +1693,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 47.5,
     billDepth: 16.8,
@@ -1702,7 +1702,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 47.6,
     billDepth: 18.3,
@@ -1711,7 +1711,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 52,
     billDepth: 20.7,
@@ -1720,7 +1720,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 46.9,
     billDepth: 16.6,
@@ -1729,7 +1729,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 53.5,
     billDepth: 19.9,
@@ -1738,7 +1738,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 49,
     billDepth: 19.5,
@@ -1747,7 +1747,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 46.2,
     billDepth: 17.5,
@@ -1756,7 +1756,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.9,
     billDepth: 19.1,
@@ -1765,7 +1765,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 45.5,
     billDepth: 17,
@@ -1774,7 +1774,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.9,
     billDepth: 17.9,
@@ -1783,7 +1783,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.8,
     billDepth: 18.5,
@@ -1792,7 +1792,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.1,
     billDepth: 17.9,
@@ -1801,7 +1801,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 49,
     billDepth: 19.6,
@@ -1810,7 +1810,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 51.5,
     billDepth: 18.7,
@@ -1819,7 +1819,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 49.8,
     billDepth: 17.3,
@@ -1828,7 +1828,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 48.1,
     billDepth: 16.4,
@@ -1837,7 +1837,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 51.4,
     billDepth: 19,
@@ -1846,7 +1846,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 45.7,
     billDepth: 17.3,
@@ -1855,7 +1855,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.7,
     billDepth: 19.7,
@@ -1864,7 +1864,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 42.5,
     billDepth: 17.3,
@@ -1873,7 +1873,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 52.2,
     billDepth: 18.8,
@@ -1882,7 +1882,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 45.2,
     billDepth: 16.6,
@@ -1891,7 +1891,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 49.3,
     billDepth: 19.9,
@@ -1900,7 +1900,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.2,
     billDepth: 18.8,
@@ -1909,7 +1909,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 45.6,
     billDepth: 19.4,
@@ -1918,7 +1918,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 51.9,
     billDepth: 19.5,
@@ -1927,7 +1927,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 46.8,
     billDepth: 16.5,
@@ -1936,7 +1936,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 45.7,
     billDepth: 17,
@@ -1945,7 +1945,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 55.8,
     billDepth: 19.8,
@@ -1954,7 +1954,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 43.5,
     billDepth: 18.1,
@@ -1963,7 +1963,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 49.6,
     billDepth: 18.2,
@@ -1972,7 +1972,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.8,
     billDepth: 19,
@@ -1981,7 +1981,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Chinstrap",
+    species: "chinstrap",
     island: "Dream",
     billLength: 50.2,
     billDepth: 18.7,
@@ -1990,7 +1990,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.1,
     billDepth: 13.2,
@@ -1999,7 +1999,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50,
     billDepth: 16.3,
@@ -2008,7 +2008,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.7,
     billDepth: 14.1,
@@ -2017,7 +2017,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50,
     billDepth: 15.2,
@@ -2026,7 +2026,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.6,
     billDepth: 14.5,
@@ -2035,7 +2035,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.5,
     billDepth: 13.5,
@@ -2044,7 +2044,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.4,
     billDepth: 14.6,
@@ -2053,7 +2053,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.7,
     billDepth: 15.3,
@@ -2062,7 +2062,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 43.3,
     billDepth: 13.4,
@@ -2071,7 +2071,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.8,
     billDepth: 15.4,
@@ -2080,7 +2080,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 40.9,
     billDepth: 13.7,
@@ -2089,7 +2089,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49,
     billDepth: 16.1,
@@ -2098,7 +2098,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.5,
     billDepth: 13.7,
@@ -2107,7 +2107,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.4,
     billDepth: 14.6,
@@ -2116,7 +2116,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.8,
     billDepth: 14.6,
@@ -2125,7 +2125,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.3,
     billDepth: 15.7,
@@ -2134,7 +2134,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 42,
     billDepth: 13.5,
@@ -2143,7 +2143,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.2,
     billDepth: 15.2,
@@ -2152,7 +2152,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.2,
     billDepth: 14.5,
@@ -2161,7 +2161,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.7,
     billDepth: 15.1,
@@ -2170,7 +2170,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50.2,
     billDepth: 14.3,
@@ -2179,7 +2179,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.1,
     billDepth: 14.5,
@@ -2188,7 +2188,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.5,
     billDepth: 14.5,
@@ -2197,7 +2197,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.3,
     billDepth: 15.8,
@@ -2206,7 +2206,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 42.9,
     billDepth: 13.1,
@@ -2215,7 +2215,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.1,
     billDepth: 15.1,
@@ -2224,7 +2224,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 44.5,
     billDepth: 14.3,
@@ -2233,7 +2233,7 @@ export const penguins: Penguin[] = [
     sex: null,
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.8,
     billDepth: 15,
@@ -2242,7 +2242,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.2,
     billDepth: 14.3,
@@ -2251,7 +2251,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50,
     billDepth: 15.3,
@@ -2260,7 +2260,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.3,
     billDepth: 15.3,
@@ -2269,7 +2269,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 42.8,
     billDepth: 14.2,
@@ -2278,7 +2278,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.1,
     billDepth: 14.5,
@@ -2287,7 +2287,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 59.6,
     billDepth: 17,
@@ -2296,7 +2296,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.1,
     billDepth: 14.8,
@@ -2305,7 +2305,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.4,
     billDepth: 16.3,
@@ -2314,7 +2314,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 42.6,
     billDepth: 13.7,
@@ -2323,7 +2323,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 44.4,
     billDepth: 17.3,
@@ -2332,7 +2332,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 44,
     billDepth: 13.6,
@@ -2341,7 +2341,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.7,
     billDepth: 15.7,
@@ -2350,7 +2350,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 42.7,
     billDepth: 13.7,
@@ -2359,7 +2359,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.6,
     billDepth: 16,
@@ -2368,7 +2368,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.3,
     billDepth: 13.7,
@@ -2377,7 +2377,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.6,
     billDepth: 15,
@@ -2386,7 +2386,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50.5,
     billDepth: 15.9,
@@ -2395,7 +2395,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 43.6,
     billDepth: 13.9,
@@ -2404,7 +2404,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.5,
     billDepth: 13.9,
@@ -2413,7 +2413,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50.5,
     billDepth: 15.9,
@@ -2422,7 +2422,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 44.9,
     billDepth: 13.3,
@@ -2431,7 +2431,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.2,
     billDepth: 15.8,
@@ -2440,7 +2440,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.6,
     billDepth: 14.2,
@@ -2449,7 +2449,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.5,
     billDepth: 14.1,
@@ -2458,7 +2458,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.1,
     billDepth: 14.4,
@@ -2467,7 +2467,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50.1,
     billDepth: 15,
@@ -2476,7 +2476,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.5,
     billDepth: 14.4,
@@ -2485,7 +2485,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45,
     billDepth: 15.4,
@@ -2494,7 +2494,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 43.8,
     billDepth: 13.9,
@@ -2503,7 +2503,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.5,
     billDepth: 15,
@@ -2512,7 +2512,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 43.2,
     billDepth: 14.5,
@@ -2521,7 +2521,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50.4,
     billDepth: 15.3,
@@ -2530,7 +2530,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.3,
     billDepth: 13.8,
@@ -2539,7 +2539,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.2,
     billDepth: 14.9,
@@ -2548,7 +2548,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.7,
     billDepth: 13.9,
@@ -2557,7 +2557,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 54.3,
     billDepth: 15.7,
@@ -2566,7 +2566,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.8,
     billDepth: 14.2,
@@ -2575,7 +2575,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.8,
     billDepth: 16.8,
@@ -2584,7 +2584,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.2,
     billDepth: 14.4,
@@ -2593,7 +2593,7 @@ export const penguins: Penguin[] = [
     sex: null,
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.5,
     billDepth: 16.2,
@@ -2602,7 +2602,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 43.5,
     billDepth: 14.2,
@@ -2611,7 +2611,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50.7,
     billDepth: 15,
@@ -2620,7 +2620,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.7,
     billDepth: 15,
@@ -2629,7 +2629,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.4,
     billDepth: 15.6,
@@ -2638,7 +2638,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.2,
     billDepth: 15.6,
@@ -2647,7 +2647,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.5,
     billDepth: 14.8,
@@ -2656,7 +2656,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.4,
     billDepth: 15,
@@ -2665,7 +2665,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.6,
     billDepth: 16,
@@ -2674,7 +2674,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.5,
     billDepth: 14.2,
@@ -2683,7 +2683,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 51.1,
     billDepth: 16.3,
@@ -2692,7 +2692,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.2,
     billDepth: 13.8,
@@ -2701,7 +2701,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.2,
     billDepth: 16.4,
@@ -2710,7 +2710,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.1,
     billDepth: 14.5,
@@ -2719,7 +2719,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 52.5,
     billDepth: 15.6,
@@ -2728,7 +2728,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.4,
     billDepth: 14.6,
@@ -2737,7 +2737,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50,
     billDepth: 15.9,
@@ -2746,7 +2746,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 44.9,
     billDepth: 13.8,
@@ -2755,7 +2755,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50.8,
     billDepth: 17.3,
@@ -2764,7 +2764,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 43.4,
     billDepth: 14.4,
@@ -2773,7 +2773,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 51.3,
     billDepth: 14.2,
@@ -2782,7 +2782,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.5,
     billDepth: 14,
@@ -2791,7 +2791,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 52.1,
     billDepth: 17,
@@ -2800,7 +2800,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.5,
     billDepth: 15,
@@ -2809,7 +2809,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 52.2,
     billDepth: 17.1,
@@ -2818,7 +2818,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.5,
     billDepth: 14.5,
@@ -2827,7 +2827,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.5,
     billDepth: 16.1,
@@ -2836,7 +2836,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 44.5,
     billDepth: 14.7,
@@ -2845,7 +2845,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50.8,
     billDepth: 15.7,
@@ -2854,7 +2854,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.4,
     billDepth: 15.8,
@@ -2863,7 +2863,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.9,
     billDepth: 14.6,
@@ -2872,7 +2872,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.4,
     billDepth: 14.4,
@@ -2881,7 +2881,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 51.1,
     billDepth: 16.5,
@@ -2890,7 +2890,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.5,
     billDepth: 15,
@@ -2899,7 +2899,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 55.9,
     billDepth: 17,
@@ -2908,7 +2908,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.2,
     billDepth: 15.5,
@@ -2917,7 +2917,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.1,
     billDepth: 15,
@@ -2926,7 +2926,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.3,
     billDepth: 13.8,
@@ -2935,7 +2935,7 @@ export const penguins: Penguin[] = [
     sex: null,
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.8,
     billDepth: 16.1,
@@ -2944,7 +2944,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 41.7,
     billDepth: 14.7,
@@ -2953,7 +2953,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 53.4,
     billDepth: 15.8,
@@ -2962,7 +2962,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 43.3,
     billDepth: 14,
@@ -2971,7 +2971,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.1,
     billDepth: 15.1,
@@ -2980,7 +2980,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50.5,
     billDepth: 15.2,
@@ -2989,7 +2989,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.8,
     billDepth: 15.9,
@@ -2998,7 +2998,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 43.5,
     billDepth: 15.2,
@@ -3007,7 +3007,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 51.5,
     billDepth: 16.3,
@@ -3016,7 +3016,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.2,
     billDepth: 14.1,
@@ -3025,7 +3025,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 55.1,
     billDepth: 16,
@@ -3034,7 +3034,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 48.8,
     billDepth: 16.2,
@@ -3043,7 +3043,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 47.2,
     billDepth: 13.7,
@@ -3052,7 +3052,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 46.8,
     billDepth: 14.3,
@@ -3061,7 +3061,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 50.4,
     billDepth: 15.7,
@@ -3070,7 +3070,7 @@ export const penguins: Penguin[] = [
     sex: "MALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 45.2,
     billDepth: 14.8,
@@ -3079,7 +3079,7 @@ export const penguins: Penguin[] = [
     sex: "FEMALE",
   },
   {
-    species: "Gentoo",
+    species: "gentoo",
     island: "Biscoe",
     billLength: 49.9,
     billDepth: 16.1,

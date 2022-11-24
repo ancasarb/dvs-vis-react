@@ -95,15 +95,15 @@ function PenguinsScatterplot({
   const gentooAnchor = find(penguins, (p) => billLength(p) > 59) as Penguin;
 
   const summaryAnnotations: Record<Species, { x: number; y: number }> = {
-    Adelie: {
+    adelie: {
       x: xScale(billLength(adelieAnchor)) + 60,
       y: yScale(billDepth(adelieAnchor)) + 50,
     },
-    Chinstrap: {
+    chinstrap: {
       x: xScale(billLength(chinstrapAnchor)) + 55,
       y: yScale(billDepth(chinstrapAnchor)) - 12,
     },
-    Gentoo: {
+    gentoo: {
       x: xScale(billLength(gentooAnchor)),
       y: yScale(billDepth(gentooAnchor)) + 150,
     },

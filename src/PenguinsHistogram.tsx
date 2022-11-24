@@ -3,13 +3,18 @@ import { groupBy, mean } from "lodash";
 import { bin, extent, max } from "d3";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
 import { curveMonotoneX } from "@visx/curve";
+
 import { Group } from "@visx/group";
 import { GridColumns } from "@visx/grid";
 import { AxisBottom } from "@visx/axis";
 import { Area, Circle } from "@visx/shape";
 import { Text } from "@visx/text";
+
 import Labels from "./components/Labels";
-import TickMarks from "./components/TickMarks";
+import LineTickMarks from "./components/LineTickMarks";
+import TickMarksSelector from "./components/TickMarksSelector";
+import { TickMarksType } from "./model/tickmarks";
+
 import { useMemo, useState } from "react";
 import {
   accessorForVariable,
@@ -18,8 +23,8 @@ import {
 } from "./model/variable";
 import VariableSelector from "./components/VariableSelector";
 import { Card, Space } from "antd";
-import { TickMarksType } from "./model/tickmarks";
-import TickMarksSelector from "./components/TickMarksSelector";
+
+import CircleTickMarks from "./components/CircleTickMarks";
 
 const defaultMargin = { top: 30, right: 30, bottom: 50, left: 100 };
 
@@ -179,15 +184,26 @@ function PenguinsHistogram({
                   </Group>
 
                   <Group top={half}>
-                    <TickMarks
-                      data={penguins}
-                      getX={accessor}
-                      height={half}
-                      padding={10}
-                      xScale={xScale}
-                      type={tickMarksType}
-                      className="penguins-histogram-line"
-                    />
+                    {tickMarksType === "line" ? (
+                      <LineTickMarks
+                        data={penguins}
+                        getX={accessor}
+                        height={half}
+                        padding={10}
+                        xScale={xScale}
+                        className="penguins-histogram-line"
+                      />
+                    ) : (
+                      <CircleTickMarks
+                        data={penguins}
+                        getX={accessor}
+                        height={half}
+                        padding={10}
+                        className="penguins-annotation-circle"
+                        xScale={xScale}
+                        type={tickMarksType}
+                      />
+                    )}
                   </Group>
                 </Group>
               );
