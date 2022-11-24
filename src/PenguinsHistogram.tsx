@@ -15,7 +15,7 @@ import LineTickMarks from "./components/LineTickMarks";
 import TickMarksSelector from "./components/TickMarksSelector";
 import { TickMarksType } from "./model/tickmarks";
 
-import { useMemo, useState } from "react";
+import { useMemo, useReducer } from "react";
 import {
   accessorForVariable,
   titleForVariable,
@@ -52,11 +52,37 @@ function PenguinsHistogram({
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
 
-  const [variable, setVariable] = useState<Variable>("ratio");
+  type State = { variable: Variable; ticks: TickMarksType };
+  type Action =
+    | { type: "change_variable"; newVariable: Variable }
+    | { type: "change_ticks"; newTicks: TickMarksType };
+
+  function stateReducer(state: State, action: Action): State {
+    switch (action.type) {
+      case "change_variable": {
+        return {
+          ...state,
+          variable: action.newVariable,
+          ticks: "line",
+        };
+      }
+
+      case "change_ticks": {
+        return {
+          ...state,
+          ticks: action.newTicks,
+        };
+      }
+    }
+  }
+
+  const [{ variable, ticks }, dispatch] = useReducer(stateReducer, {
+    variable: "ratio",
+    ticks: "line",
+  });
+
   const accessor = useMemo(() => accessorForVariable(variable), [variable]);
   const title = titleForVariable(variable);
-
-  const [tickMarksType, setTickMarksType] = useState<TickMarksType>("line");
 
   const yScale = scaleBand({
     domain: speciesList,
@@ -70,18 +96,18 @@ function PenguinsHistogram({
   });
 
   const onVariableSelect = (value: Variable) => {
-    setVariable(value);
-    setTickMarksType("line");
+    dispatch({ type: "change_variable", newVariable: value });
+  };
+
+  const onTicksTypeSelect = (value: TickMarksType) => {
+    dispatch({ type: "change_ticks", newTicks: value });
   };
 
   return (
     <Card>
       <Space direction="vertical" size="large">
         <VariableSelector selected={variable} onSelect={onVariableSelect} />
-        <TickMarksSelector
-          selected={tickMarksType}
-          onSelect={setTickMarksType}
-        />
+        <TickMarksSelector selected={ticks} onSelect={onTicksTypeSelect} />
         <svg width={width} height={height}>
           <Labels
             top={margin.top}
@@ -184,7 +210,7 @@ function PenguinsHistogram({
                   </Group>
 
                   <Group top={half}>
-                    {tickMarksType === "line" ? (
+                    {ticks === "line" ? (
                       <LineTickMarks
                         data={penguins}
                         getX={accessor}
@@ -201,7 +227,7 @@ function PenguinsHistogram({
                         padding={10}
                         className="penguins-annotation-circle"
                         xScale={xScale}
-                        type={tickMarksType}
+                        type={ticks}
                       />
                     )}
                   </Group>
