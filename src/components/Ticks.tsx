@@ -1,8 +1,7 @@
 import { TickMarksType } from "../model/tickmarks";
-import LineTickMarks, { LineTickMarksProps } from "./LineTickMarks";
-import CircleTickMarks, { CircleTickMarksProps } from "./CircleTickMarks";
-import { animated, Transition } from "react-spring";
-import { FunctionComponent } from "react";
+import LineTickMarks from "./LineTickMarks";
+import CircleTickMarks from "./CircleTickMarks";
+import { Transition } from "react-spring";
 
 interface TicksProps<Datum, Variable> {
   type: TickMarksType;
@@ -12,20 +11,11 @@ interface TicksProps<Datum, Variable> {
   height: number;
   padding: number;
 }
-const AnimatedLineTickMarks = animated(LineTickMarks);
-const AnimatedCircleTickMarks = animated(CircleTickMarks);
 
 export default function Ticks<Datum, Variable>({
   type,
   ...props
 }: TicksProps<Datum, Variable>) {
-  const LineTicks = AnimatedLineTickMarks as FunctionComponent<
-    LineTickMarksProps<Datum, Variable>
-  >;
-  const CircleTicks = AnimatedCircleTickMarks as FunctionComponent<
-    CircleTickMarksProps<Datum, Variable>
-  >;
-
   return (
     <Transition
       initial={{ opacity: 1 }}
@@ -39,13 +29,13 @@ export default function Ticks<Datum, Variable>({
     >
       {({ opacity }, itemType) => {
         return itemType === "line" ? (
-          <LineTicks
+          <LineTickMarks
             {...props}
             opacity={opacity}
             className="penguins-histogram-line"
           />
         ) : (
-          <CircleTicks
+          <CircleTickMarks
             {...props}
             opacity={opacity}
             className="penguins-annotation-circle"

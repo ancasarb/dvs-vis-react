@@ -1,5 +1,6 @@
 import { random } from "lodash";
 import { useMemo } from "react";
+import { animated, SpringValue } from "react-spring";
 
 export interface CircleTickMarksProps<Datum, Variable> {
   data: Datum[];
@@ -8,7 +9,7 @@ export interface CircleTickMarksProps<Datum, Variable> {
   height: number;
   padding: number;
   className: string;
-  opacity: number;
+  opacity: SpringValue<number>;
 }
 
 function CircleTickMarks<Datum, Variable>({
@@ -32,7 +33,7 @@ function CircleTickMarks<Datum, Variable>({
         );
 
         return (
-          <circle
+          <animated.circle
             className={className}
             key={"c-" + idx}
             cx={cx}

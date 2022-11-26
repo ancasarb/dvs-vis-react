@@ -1,4 +1,5 @@
 import { Line } from "@visx/shape";
+import { animated, SpringValue } from "react-spring";
 
 export interface LineTickMarksProps<Datum, Variable> {
   data: Datum[];
@@ -7,8 +8,10 @@ export interface LineTickMarksProps<Datum, Variable> {
   height: number;
   padding: number;
   className: string;
-  opacity: number;
+  opacity: SpringValue<number>;
 }
+
+const AnimatedLine = animated(Line);
 
 function LineTickMarks<Datum, Variable>({
   data,
@@ -25,7 +28,7 @@ function LineTickMarks<Datum, Variable>({
         const x = xScale(getX(datum));
 
         return (
-          <Line
+          <AnimatedLine
             key={idx}
             className={className}
             stroke="currentColor"
