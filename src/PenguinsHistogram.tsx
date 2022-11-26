@@ -26,6 +26,7 @@ import VariableSelector from "./components/VariableSelector";
 import { Card, Space } from "antd";
 
 import CircleTickMarks from "./components/CircleTickMarks";
+import Ticks from "./components/Ticks";
 
 const defaultMargin = { top: 30, right: 30, bottom: 50, left: 100 };
 
@@ -116,8 +117,10 @@ function PenguinsHistogram({
   return (
     <Card>
       <Space direction="vertical" size="large">
-        <VariableSelector selected={variable} onSelect={onVariableSelect} />
-        <TickMarksSelector selected={ticks} onSelect={onTicksTypeSelect} />
+        <Space size="small">
+          <VariableSelector selected={variable} onSelect={onVariableSelect} />
+          <TickMarksSelector selected={ticks} onSelect={onTicksTypeSelect} />
+        </Space>
         <svg width={width} height={height}>
           <Labels
             top={margin.top}
@@ -220,26 +223,14 @@ function PenguinsHistogram({
                   </Group>
 
                   <Group top={half}>
-                    {ticks === "line" ? (
-                      <LineTickMarks
-                        data={penguins}
-                        getX={accessor}
-                        height={half}
-                        padding={10}
-                        xScale={xScale}
-                        className="penguins-histogram-line"
-                      />
-                    ) : (
-                      <CircleTickMarks
-                        data={penguins}
-                        getX={accessor}
-                        height={half}
-                        padding={10}
-                        className="penguins-annotation-circle"
-                        xScale={xScale}
-                        transition={transition}
-                      />
-                    )}
+                    <Ticks
+                      type={ticks}
+                      data={penguins}
+                      getX={accessor}
+                      xScale={xScale}
+                      height={half}
+                      padding={10}
+                    />
                   </Group>
                 </Group>
               );
