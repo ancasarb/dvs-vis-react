@@ -1,12 +1,13 @@
 import { Line } from "@visx/shape";
 
-interface TickMarsProps<Datum, Variable> {
+export interface LineTickMarksProps<Datum, Variable> {
   data: Datum[];
   getX: (datum: Datum) => Variable;
   xScale: (value: Variable) => number;
   height: number;
   padding: number;
   className: string;
+  opacity: number;
 }
 
 function LineTickMarks<Datum, Variable>({
@@ -16,7 +17,8 @@ function LineTickMarks<Datum, Variable>({
   xScale,
   padding,
   className,
-}: TickMarsProps<Datum, Variable>) {
+  opacity,
+}: LineTickMarksProps<Datum, Variable>) {
   return (
     <>
       {data.map((datum, idx) => {
@@ -27,6 +29,7 @@ function LineTickMarks<Datum, Variable>({
             key={idx}
             className={className}
             stroke="currentColor"
+            strokeOpacity={opacity}
             from={{
               x,
               y: padding,

@@ -1,13 +1,14 @@
 import { random } from "lodash";
 import { useMemo } from "react";
 
-interface TickMarsProps<Datum, Variable> {
+export interface CircleTickMarksProps<Datum, Variable> {
   data: Datum[];
   getX: (datum: Datum) => Variable;
   xScale: (value: Variable) => number;
   height: number;
   padding: number;
   className: string;
+  opacity: number;
 }
 
 function CircleTickMarks<Datum, Variable>({
@@ -17,8 +18,8 @@ function CircleTickMarks<Datum, Variable>({
   xScale,
   padding,
   className,
-}: TickMarsProps<Datum, Variable>) {
-  console.log("drawing circles");
+  opacity,
+}: CircleTickMarksProps<Datum, Variable>) {
   return (
     <>
       {data.map((datum, idx) => {
@@ -37,6 +38,7 @@ function CircleTickMarks<Datum, Variable>({
             cx={cx}
             cy={cy}
             r={2.5}
+            style={{ opacity }}
             stroke="currentColor"
             fill="white"
           />
