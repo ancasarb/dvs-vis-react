@@ -8,10 +8,7 @@ export interface LineTickMarksProps<Datum, Variable> {
   height: number;
   padding: number;
   className: string;
-  opacity: SpringValue<number>;
 }
-
-const AnimatedLine = animated(Line);
 
 function LineTickMarks<Datum, Variable>({
   data,
@@ -20,7 +17,6 @@ function LineTickMarks<Datum, Variable>({
   xScale,
   padding,
   className,
-  opacity,
 }: LineTickMarksProps<Datum, Variable>) {
   return (
     <>
@@ -28,11 +24,10 @@ function LineTickMarks<Datum, Variable>({
         const x = xScale(getX(datum));
 
         return (
-          <AnimatedLine
+          <Line
             key={idx}
             className={className}
             stroke="currentColor"
-            strokeOpacity={opacity}
             from={{
               x,
               y: padding,

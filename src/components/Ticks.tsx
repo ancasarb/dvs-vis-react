@@ -1,7 +1,7 @@
 import { TickMarksType } from "../model/tickmarks";
 import LineTickMarks from "./LineTickMarks";
 import CircleTickMarks from "./CircleTickMarks";
-import { Transition } from "react-spring";
+import { Transition, animated } from "react-spring";
 
 interface TicksProps<Datum, Variable> {
   type: TickMarksType;
@@ -29,17 +29,16 @@ export default function Ticks<Datum, Variable>({
     >
       {({ opacity }, itemType) => {
         return itemType === "line" ? (
-          <LineTickMarks
-            {...props}
-            opacity={opacity}
-            className="penguins-histogram-line"
-          />
+          <animated.g style={{ strokeOpacity: opacity }}>
+            <LineTickMarks {...props} className="penguins-histogram-line" />
+          </animated.g>
         ) : (
-          <CircleTickMarks
-            {...props}
-            opacity={opacity}
-            className="penguins-annotation-circle"
-          />
+          <animated.g style={{ opacity }}>
+            <CircleTickMarks
+              {...props}
+              className="penguins-annotation-circle"
+            />
+          </animated.g>
         );
       }}
     </Transition>

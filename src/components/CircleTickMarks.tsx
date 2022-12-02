@@ -9,7 +9,6 @@ export interface CircleTickMarksProps<Datum, Variable> {
   height: number;
   padding: number;
   className: string;
-  opacity: SpringValue<number>;
 }
 
 function CircleTickMarks<Datum, Variable>({
@@ -19,7 +18,6 @@ function CircleTickMarks<Datum, Variable>({
   xScale,
   padding,
   className,
-  opacity,
 }: CircleTickMarksProps<Datum, Variable>) {
   return (
     <>
@@ -33,13 +31,12 @@ function CircleTickMarks<Datum, Variable>({
         );
 
         return (
-          <animated.circle
+          <circle
             className={className}
             key={"c-" + idx}
             cx={cx}
             cy={cy}
             r={2.5}
-            style={{ opacity }}
             stroke="currentColor"
             fill="white"
           />
