@@ -1,14 +1,14 @@
 import { random } from "lodash";
-import { animated, TransitionFn } from "react-spring";
+import { useMemo } from "react";
+import { animated, SpringValue } from "react-spring";
 
-interface TickMarsProps<Datum, Variable> {
+export interface CircleTickMarksProps<Datum, Variable> {
   data: Datum[];
   getX: (datum: Datum) => Variable;
   xScale: (value: Variable) => number;
   height: number;
   padding: number;
   className: string;
-  transition: TransitionFn<boolean, { opacity: 0 | 1 }>;
 }
 
 function CircleTickMarks<Datum, Variable>({
@@ -18,32 +18,29 @@ function CircleTickMarks<Datum, Variable>({
   xScale,
   padding,
   className,
-  transition,
-}: TickMarsProps<Datum, Variable>) {
+}: CircleTickMarksProps<Datum, Variable>) {
   return (
     <>
       {data.map((datum, idx) => {
-        const x = xScale(getX(datum));
+        const x = getX(datum);
 
-        const y = random(padding, height - padding, true);
+        const cx = xScale(x);
+        const cy = useMemo(
+          () => random(padding, height - padding, true),
+          [x, idx]
+        );
 
-        {
-          transition(
-            (style, item) =>
-              item && (
-                <animated.circle
-                  style={style}
-                  className={className}
-                  key={"c-" + idx}
-                  cx={x}
-                  cy={y}
-                  r={2.5}
-                  stroke="currentColor"
-                  fill="white"
-                />
-              )
-          );
-        }
+        return (
+          <circle
+            className={className}
+            key={"c-" + idx}
+            cx={cx}
+            cy={cy}
+            r={2.5}
+            stroke="currentColor"
+            fill="white"
+          />
+        );
       })}
     </>
   );

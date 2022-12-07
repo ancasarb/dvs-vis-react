@@ -11,7 +11,7 @@ import { Area, Circle } from "@visx/shape";
 import { Text } from "@visx/text";
 
 import Labels from "./components/Labels";
-import LineTickMarks from "./components/LineTickMarks";
+import Ticks from "./components/Ticks";
 import TickMarksSelector from "./components/TickMarksSelector";
 import { TickMarksType } from "./model/tickmarks";
 
@@ -24,8 +24,6 @@ import {
 } from "./model/variable";
 import VariableSelector from "./components/VariableSelector";
 import { Card, Space } from "antd";
-
-import CircleTickMarks from "./components/CircleTickMarks";
 
 const defaultMargin = { top: 30, right: 30, bottom: 50, left: 100 };
 
@@ -85,16 +83,24 @@ function PenguinsHistogram({
   const accessor = useMemo(() => accessorForVariable(variable), [variable]);
   const title = titleForVariable(variable);
 
-  const yScale = scaleBand({
-    domain: speciesList,
-    range: [yMax, 0],
-    reverse: true,
-  });
-  const xScale = scaleLinear({
-    domain: extent(penguins, accessor) as [number, number],
-    nice: true,
-    range: [0, xMax],
-  });
+  const yScale = useMemo(
+    () =>
+      scaleBand({
+        domain: speciesList,
+        range: [yMax, 0],
+        reverse: true,
+      }),
+    [speciesList, yMax]
+  );
+  const xScale = useMemo(
+    () =>
+      scaleLinear({
+        domain: extent(penguins, accessor) as [number, number],
+        nice: true,
+        range: [0, xMax],
+      }),
+    [penguins, accessor, xMax]
+  );
 
   const onVariableSelect = (value: Variable) => {
     dispatch({ type: "change_variable", newVariable: value });
@@ -116,8 +122,10 @@ function PenguinsHistogram({
   return (
     <Card>
       <Space direction="vertical" size="large">
-        <VariableSelector selected={variable} onSelect={onVariableSelect} />
-        <TickMarksSelector selected={ticks} onSelect={onTicksTypeSelect} />
+        <Space size="small">
+          <VariableSelector selected={variable} onSelect={onVariableSelect} />
+          <TickMarksSelector selected={ticks} onSelect={onTicksTypeSelect} />
+        </Space>
         <svg width={width} height={height}>
           <Labels
             top={margin.top}
@@ -220,26 +228,14 @@ function PenguinsHistogram({
                   </Group>
 
                   <Group top={half}>
-                    {ticks === "line" ? (
-                      <LineTickMarks
-                        data={penguins}
-                        getX={accessor}
-                        height={half}
-                        padding={10}
-                        xScale={xScale}
-                        className="penguins-histogram-line"
-                      />
-                    ) : (
-                      <CircleTickMarks
-                        data={penguins}
-                        getX={accessor}
-                        height={half}
-                        padding={10}
-                        className="penguins-annotation-circle"
-                        xScale={xScale}
-                        transition={transition}
-                      />
-                    )}
+                    <Ticks
+                      type={ticks}
+                      data={penguins}
+                      getX={accessor}
+                      xScale={xScale}
+                      height={half}
+                      padding={10}
+                    />
                   </Group>
                 </Group>
               );

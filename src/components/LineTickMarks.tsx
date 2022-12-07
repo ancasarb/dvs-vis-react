@@ -1,6 +1,7 @@
 import { Line } from "@visx/shape";
+import { animated, SpringValue } from "react-spring";
 
-interface TickMarsProps<Datum, Variable> {
+export interface LineTickMarksProps<Datum, Variable> {
   data: Datum[];
   getX: (datum: Datum) => Variable;
   xScale: (value: Variable) => number;
@@ -16,7 +17,7 @@ function LineTickMarks<Datum, Variable>({
   xScale,
   padding,
   className,
-}: TickMarsProps<Datum, Variable>) {
+}: LineTickMarksProps<Datum, Variable>) {
   return (
     <>
       {data.map((datum, idx) => {
