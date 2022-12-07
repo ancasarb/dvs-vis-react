@@ -68,25 +68,23 @@
   stroke: white;
 }
 
-.summary-annotation-Adelie {
+.summary-annotation-adelie {
   color: #ff8c00;
 }
 
-.summary-annotation-Chinstrap {
+.summary-annotation-chinstrap {
   color: #a034f0;
+}
+
+.summary-annotation-gentoo {
+  color: #036f6f;
 }
 
 .penguins-histogram-line-out {
   opacity: 0.3;
 }
 
-.summary-annotation-Gentoo {
-  color: #036f6f;
-}
-
-.summary-annotation-Adelie,
-.summary-annotation-Chinstrap,
-.summary-annotation-Gentoo {
+.summary-annotation {
   font-size: 11px;
 }
 
@@ -95,9 +93,7 @@
   font-weight: bold;
 }
 
-.penguins-annotation-line-Adelie,
-.penguins-annotation-line-Chinstrap,
-.penguins-annotation-line-Gentoo {
+.penguins-annotation-line {
   stroke-width: 3px;
 }
 

@@ -3,14 +3,20 @@ import { groupBy, mean } from "lodash";
 import { bin, extent, max } from "d3";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
 import { curveMonotoneX } from "@visx/curve";
+
 import { Group } from "@visx/group";
 import { GridColumns } from "@visx/grid";
 import { AxisBottom } from "@visx/axis";
 import { Area, Circle } from "@visx/shape";
 import { Text } from "@visx/text";
+
 import Labels from "./components/Labels";
-import TickMarks from "./components/TickMarks";
-import { useMemo, useState } from "react";
+import Ticks from "./components/Ticks";
+import TickMarksSelector from "./components/TickMarksSelector";
+import { TickMarksType } from "./model/tickmarks";
+
+import { useMemo, useReducer } from "react";
+import { useTransition } from "react-spring";
 import {
   accessorForVariable,
   titleForVariable,
@@ -18,8 +24,6 @@ import {
 } from "./model/variable";
 import VariableSelector from "./components/VariableSelector";
 import { Card, Space } from "antd";
-import { TickMarksType } from "./model/tickmarks";
-import TickMarksSelector from "./components/TickMarksSelector";
 
 const defaultMargin = { top: 30, right: 30, bottom: 50, left: 100 };
 
@@ -47,36 +51,81 @@ function PenguinsHistogram({
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
 
-  const [variable, setVariable] = useState<Variable>("ratio");
+  type State = { variable: Variable; ticks: TickMarksType };
+  type Action =
+    | { type: "change_variable"; newVariable: Variable }
+    | { type: "change_ticks"; newTicks: TickMarksType };
+
+  function stateReducer(state: State, action: Action): State {
+    switch (action.type) {
+      case "change_variable": {
+        return {
+          ...state,
+          variable: action.newVariable,
+          ticks: "line",
+        };
+      }
+
+      case "change_ticks": {
+        return {
+          ...state,
+          ticks: action.newTicks,
+        };
+      }
+    }
+  }
+
+  const [{ variable, ticks }, dispatch] = useReducer(stateReducer, {
+    variable: "ratio",
+    ticks: "line",
+  });
+
   const accessor = useMemo(() => accessorForVariable(variable), [variable]);
   const title = titleForVariable(variable);
 
-  const [tickMarksType, setTickMarksType] = useState<TickMarksType>("line");
-
-  const yScale = scaleBand({
-    domain: speciesList,
-    range: [yMax, 0],
-    reverse: true,
-  });
-  const xScale = scaleLinear({
-    domain: extent(penguins, accessor) as [number, number],
-    nice: true,
-    range: [0, xMax],
-  });
+  const yScale = useMemo(
+    () =>
+      scaleBand({
+        domain: speciesList,
+        range: [yMax, 0],
+        reverse: true,
+      }),
+    [speciesList, yMax]
+  );
+  const xScale = useMemo(
+    () =>
+      scaleLinear({
+        domain: extent(penguins, accessor) as [number, number],
+        nice: true,
+        range: [0, xMax],
+      }),
+    [penguins, accessor, xMax]
+  );
 
   const onVariableSelect = (value: Variable) => {
-    setVariable(value);
-    setTickMarksType("line");
+    dispatch({ type: "change_variable", newVariable: value });
   };
+
+  const onTicksTypeSelect = (value: TickMarksType) => {
+    dispatch({ type: "change_ticks", newTicks: value });
+  };
+
+  const transition = useTransition<boolean, { opacity: 0 | 1 }>(
+    ticks === "circle",
+    {
+      from: { opacity: 0 },
+      enter: { opacity: 1 },
+      leave: { opacity: 0 },
+    }
+  );
 
   return (
     <Card>
       <Space direction="vertical" size="large">
-        <VariableSelector selected={variable} onSelect={onVariableSelect} />
-        <TickMarksSelector
-          selected={tickMarksType}
-          onSelect={setTickMarksType}
-        />
+        <Space size="small">
+          <VariableSelector selected={variable} onSelect={onVariableSelect} />
+          <TickMarksSelector selected={ticks} onSelect={onTicksTypeSelect} />
+        </Space>
         <svg width={width} height={height}>
           <Labels
             top={margin.top}
@@ -179,14 +228,13 @@ function PenguinsHistogram({
                   </Group>
 
                   <Group top={half}>
-                    <TickMarks
+                    <Ticks
+                      type={ticks}
                       data={penguins}
                       getX={accessor}
+                      xScale={xScale}
                       height={half}
                       padding={10}
-                      xScale={xScale}
-                      type={tickMarksType}
-                      className="penguins-histogram-line"
                     />
                   </Group>
                 </Group>

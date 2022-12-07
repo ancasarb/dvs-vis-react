@@ -22,7 +22,7 @@ function SummaryAnnotations({
       <HtmlLabel
         key={`summary-annotation-label-${classSuffix}`}
         showAnchorLine={false}
-        className={`summary-annotation-${classSuffix}`}
+        className={`summary-annotation-${classSuffix} summary-annotation`}
       >
         <div className={titleClassName}>{title}</div>
         {summaries.map((summary, idx) => (
