@@ -1,5 +1,6 @@
 import { Line } from "@visx/shape";
-import { animated, SpringValue } from "react-spring";
+import { useContext } from "react";
+import ColorContext from "../scripts/color-context";
 
 export interface LineTickMarksProps<Datum, Variable> {
   data: Datum[];
@@ -18,6 +19,8 @@ function LineTickMarks<Datum, Variable>({
   padding,
   className,
 }: LineTickMarksProps<Datum, Variable>) {
+  const colorCtx = useContext(ColorContext);
+
   return (
     <>
       {data.map((datum, idx) => {
@@ -27,7 +30,7 @@ function LineTickMarks<Datum, Variable>({
           <Line
             key={idx}
             className={className}
-            stroke="currentColor"
+            stroke={colorCtx.color}
             from={{
               x,
               y: padding,

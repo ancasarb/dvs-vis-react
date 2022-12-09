@@ -16,7 +16,6 @@ import TickMarksSelector from "./components/TickMarksSelector";
 import { TickMarksType } from "./model/tickmarks";
 
 import { useMemo, useReducer } from "react";
-import { useTransition } from "react-spring";
 import {
   accessorForVariable,
   titleForVariable,
@@ -24,6 +23,8 @@ import {
 } from "./model/variable";
 import VariableSelector from "./components/VariableSelector";
 import { Card, Space } from "antd";
+
+import ColorContext from "./scripts/color-context";
 
 const defaultMargin = { top: 30, right: 30, bottom: 50, left: 100 };
 
@@ -110,15 +111,6 @@ function PenguinsHistogram({
     dispatch({ type: "change_ticks", newTicks: value });
   };
 
-  const transition = useTransition<boolean, { opacity: 0 | 1 }>(
-    ticks === "circle",
-    {
-      from: { opacity: 0 },
-      enter: { opacity: 1 },
-      leave: { opacity: 0 },
-    }
-  );
-
   return (
     <Card>
       <Space direction="vertical" size="large">
@@ -181,63 +173,65 @@ function PenguinsHistogram({
               const xFinal = xFn(series[series.length - 1]);
 
               return (
-                <Group
-                  key={species}
-                  top={yScale(species)}
-                  style={{ color: colorScale(species) }}
-                >
-                  <Group top={0}>
-                    <Area
-                      data={series}
-                      x0={xFn}
-                      x1={xFn}
-                      y1={yFn as any}
-                      y0={() => half}
-                      strokeWidth={1}
-                      stroke={colorScale(species)}
-                      fill={colorScale(species)}
-                      curve={curveMonotoneX}
-                      className="penguin-histogram"
-                    />
-                    <Group top={half}>
-                      <Circle
-                        className="penguins-annotation-circle"
-                        cx={meanX}
-                        cy={0}
-                        r={3}
+                <ColorContext.Provider value={{ color: colorScale(species) }}>
+                  <Group
+                    key={species}
+                    top={yScale(species)}
+                    style={{ color: colorScale(species) }}
+                  >
+                    <Group top={0}>
+                      <Area
+                        data={series}
+                        x0={xFn}
+                        x1={xFn}
+                        y1={yFn as any}
+                        y0={() => half}
+                        strokeWidth={1}
                         stroke={colorScale(species)}
                         fill={colorScale(species)}
+                        curve={curveMonotoneX}
+                        className="penguin-histogram"
                       />
-                      <Text
-                        x={meanX}
-                        y={-10}
-                        fill="white"
-                        className="penguins-histogram-annotation"
-                      >
-                        {billRatioMean.toFixed(2)}
-                      </Text>
-                      <Text
-                        x={xFinal + 2}
-                        y={0}
-                        fill={colorScale(species)}
-                        className="penguins-histogram-annotation"
-                      >
-                        {"n=" + penguins.length}
-                      </Text>
+                      <Group top={half}>
+                        <Circle
+                          className="penguins-annotation-circle"
+                          cx={meanX}
+                          cy={0}
+                          r={3}
+                          stroke={colorScale(species)}
+                          fill={colorScale(species)}
+                        />
+                        <Text
+                          x={meanX}
+                          y={-10}
+                          fill="white"
+                          className="penguins-histogram-annotation"
+                        >
+                          {billRatioMean.toFixed(2)}
+                        </Text>
+                        <Text
+                          x={xFinal + 2}
+                          y={0}
+                          fill={colorScale(species)}
+                          className="penguins-histogram-annotation"
+                        >
+                          {"n=" + penguins.length}
+                        </Text>
+                      </Group>
+                    </Group>
+
+                    <Group top={half}>
+                      <Ticks
+                        type={ticks}
+                        data={penguins}
+                        getX={accessor}
+                        xScale={xScale}
+                        height={half}
+                        padding={10}
+                      />
                     </Group>
                   </Group>
-
-                  <Group top={half}>
-                    <Ticks
-                      type={ticks}
-                      data={penguins}
-                      getX={accessor}
-                      xScale={xScale}
-                      height={half}
-                      padding={10}
-                    />
-                  </Group>
-                </Group>
+                </ColorContext.Provider>
               );
             })}
           </Group>

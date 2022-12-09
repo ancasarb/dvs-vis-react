@@ -1,6 +1,7 @@
 import { random } from "lodash";
 import { useMemo } from "react";
-import { animated, SpringValue } from "react-spring";
+import ColorContext from "../scripts/color-context";
+import { useContext } from "react";
 
 export interface CircleTickMarksProps<Datum, Variable> {
   data: Datum[];
@@ -19,6 +20,8 @@ function CircleTickMarks<Datum, Variable>({
   padding,
   className,
 }: CircleTickMarksProps<Datum, Variable>) {
+  const colorCtx = useContext(ColorContext);
+
   return (
     <>
       {data.map((datum, idx) => {
@@ -37,7 +40,7 @@ function CircleTickMarks<Datum, Variable>({
             cx={cx}
             cy={cy}
             r={2.5}
-            stroke="currentColor"
+            stroke={colorCtx.color}
             fill="white"
           />
         );
